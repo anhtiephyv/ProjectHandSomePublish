@@ -1,0 +1,13 @@
+D:\MyProject\MyProject2015\Services\bin\Release\Services.dll
+D:\MyProject\MyProject2015\Services\bin\Release\Services.pdb
+D:\MyProject\MyProject2015\Services\bin\Release\Data.dll
+D:\MyProject\MyProject2015\Services\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MyProject\MyProject2015\Services\bin\Release\EntityFramework.dll
+D:\MyProject\MyProject2015\Services\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\MyProject\MyProject2015\Services\bin\Release\Data.pdb
+D:\MyProject\MyProject2015\Services\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MyProject\MyProject2015\Services\bin\Release\EntityFramework.xml
+D:\MyProject\MyProject2015\Services\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\MyProject\MyProject2015\Services\obj\Release\Service.csprojResolveAssemblyReference.cache
+D:\MyProject\MyProject2015\Services\obj\Release\Services.dll
+D:\MyProject\MyProject2015\Services\obj\Release\Services.pdb

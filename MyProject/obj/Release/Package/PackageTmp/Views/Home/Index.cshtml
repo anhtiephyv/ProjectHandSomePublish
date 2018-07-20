@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script>
+    bootbox.prompt({
+        title: "Nhập tên người dùng",
+        inputType: 'text',
+        buttons: {
+            cancel: {
+                label: 'Hủy'
+            },
+            confirm: {
+                label: 'Ok'
+            }
+        },
+        closeButton: false,
+        callback: function (result) {
+            debugger;
+            JSONstring = JSON.stringify({ "userName": result });
+            $.post("/Login/Index", { jsonData: JSONstring }).done(function (resopne) {
+                debugger;
+                if (resopne=="True") {
+                    location.href = "Home/About";
+                }
+                else
+                {
+                    alert("Tài khoản không tồn tại");
+                    location.reload();
+                }
+            });;
+        }
+
+    });
+
+</script>

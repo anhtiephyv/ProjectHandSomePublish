@@ -1,0 +1,48 @@
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Services\obj\Debug\Service.csprojResolveAssemblyReference.cache
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Services\bin\Debug\Services.dll
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Services\bin\Debug\Services.pdb
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Services\bin\Debug\Data.dll
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Services\bin\Debug\EntityFramework.dll
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Services\bin\Debug\Data.pdb
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Services\bin\Debug\EntityFramework.xml
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Services\obj\Debug\Services.dll
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Services\obj\Debug\Services.pdb
+E:\Project\MyProject2015\Services\bin\Debug\Services.dll
+E:\Project\MyProject2015\Services\bin\Debug\Services.pdb
+E:\Project\MyProject2015\Services\bin\Debug\Data.dll
+E:\Project\MyProject2015\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Project\MyProject2015\Services\bin\Debug\EntityFramework.dll
+E:\Project\MyProject2015\Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\Project\MyProject2015\Services\bin\Debug\Data.pdb
+E:\Project\MyProject2015\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Project\MyProject2015\Services\bin\Debug\EntityFramework.xml
+E:\Project\MyProject2015\Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\Project\MyProject2015\Services\obj\Debug\Service.csprojResolveAssemblyReference.cache
+E:\Project\MyProject2015\Services\obj\Debug\Services.dll
+E:\Project\MyProject2015\Services\obj\Debug\Services.pdb
+D:\MyProject\MyProject2015\Services\bin\Debug\Services.dll
+D:\MyProject\MyProject2015\Services\bin\Debug\Services.pdb
+D:\MyProject\MyProject2015\Services\bin\Debug\Data.dll
+D:\MyProject\MyProject2015\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MyProject\MyProject2015\Services\bin\Debug\EntityFramework.dll
+D:\MyProject\MyProject2015\Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\MyProject\MyProject2015\Services\bin\Debug\Data.pdb
+D:\MyProject\MyProject2015\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MyProject\MyProject2015\Services\bin\Debug\EntityFramework.xml
+D:\MyProject\MyProject2015\Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\MyProject\MyProject2015\Services\obj\Debug\Service.csprojResolveAssemblyReference.cache
+D:\MyProject\MyProject2015\Services\obj\Debug\Services.dll
+D:\MyProject\MyProject2015\Services\obj\Debug\Services.pdb
+D:\MyProject\MyProject\Services\bin\Debug\Services.dll
+D:\MyProject\MyProject\Services\bin\Debug\Services.pdb
+D:\MyProject\MyProject\Services\bin\Debug\Data.dll
+D:\MyProject\MyProject\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MyProject\MyProject\Services\bin\Debug\EntityFramework.dll
+D:\MyProject\MyProject\Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\MyProject\MyProject\Services\bin\Debug\Data.pdb
+D:\MyProject\MyProject\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MyProject\MyProject\Services\bin\Debug\EntityFramework.xml
+D:\MyProject\MyProject\Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\MyProject\MyProject\Services\obj\Debug\Service.csprojResolveAssemblyReference.cache
+D:\MyProject\MyProject\Services\obj\Debug\Services.dll
+D:\MyProject\MyProject\Services\obj\Debug\Services.pdb

@@ -1,0 +1,31 @@
+﻿<div ng-controller="userAuthorizedController">
+    <section class="panel">
+        <header class="panel-heading">
+           Phân quyền
+        </header>
+
+        <div class="panel-body">
+            <form class="form-horizontal " method="post" enctype="multipart/form-data" name="myForm" ng-submit="AddAuthorized()">
+                <div class="form-group">
+
+                    <div class="col-sm-12">
+                        <dualmultiselect options="CountryOptions"> </dualmultiselect>
+                    </div>
+
+                </div>
+                <div class="form-group">
+
+                    <div class="col-sm-3">
+                        <button title="Lưu" class="btn btn-primary btn-lg btn-block" type="submit">Lưu</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button title="Thoát" class="btn btn-dark btn-lg btn-block" ng-click="Closemodal()" type="button">Thoát</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+
+</div>

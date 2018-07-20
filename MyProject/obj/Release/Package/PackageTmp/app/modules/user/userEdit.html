@@ -1,0 +1,69 @@
+﻿<div ng-controller="userEditController">
+    <section class="panel">
+        <header class="panel-heading">
+            Cập nhật người dùng
+            <div class="widget-icons pull-right">
+
+                <a href="javascrip:;" class="wclose" ng-click="Closemodal()"><i class="fa fa-times"></i></a>
+            </div>
+        </header>
+
+        <div class="panel-body">
+            <form class="form-horizontal " method="post" enctype="multipart/form-data" name="myForm" ng-submit="UpdateUser()">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Tên truy cập<span style="color:red">(*)</span></label>
+                    <div class="col-sm-6">
+                        <input type="text" ng-model="User.UserName" name="username" onblur="angular.element(this).scope().checkcodeExist(this)" class="form-control" ng-pattern="/^[a-zA-Z0-9]*$/" required autofocus>
+                        <span style="color:red" ng-show="myForm.username.$error.pattern">Username viết liền không dấu</span>
+                        <span class="errorMessage" ng-show="codeExist">Người dùng đã tồn tại</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Họ <span style="color:red">(*)</span></label>
+                    <div class="col-sm-6">
+                        <input type="text" ng-model="User.FirstName" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Tên<span style="color:red">(*)</span></label>
+                    <div class="col-sm-6">
+                        <input type="text" ng-model="User.LastName" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="text" ng-model="User.Email" name="email" class="form-control" ng-pattern="/\S+@\S+\.\S+/">
+                        <span style="color:red" ng-show="myForm.email.$error.pattern">Enmail không đúng định dạng</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Số điện thoại</label>
+                    <div class="col-sm-6">
+                        <input type="text" ng-model="User.Phone" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Địa chỉ</label>
+                    <div class="col-sm-6">
+                        <input type="text" ng-model="User.Address" class="form-control">
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-sm-3">
+                        <button title="Lưu" class="btn btn-primary btn-lg btn-block" ng-disabled="myForm.$invalid" type="submit">Lưu</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button title="Thoát" class="btn btn-dark btn-lg btn-block" ng-click="Closemodal()" type="button">Thoát</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+
+</div>

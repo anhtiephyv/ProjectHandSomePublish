@@ -1,0 +1,100 @@
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\obj\Debug\Data.Migrations.createdb.resources
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\bin\Debug\Data.dll.config
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\bin\Debug\Data.dll
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\bin\Debug\Data.pdb
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\bin\Debug\EntityFramework.dll
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\bin\Debug\EntityFramework.xml
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\obj\Debug\Data.dll
+c:\users\mypc\documents\visual studio 2015\Projects\MyProject\Data\obj\Debug\Data.pdb
+E:\Project\MyProject2015\Data\bin\Debug\Data.dll.config
+E:\Project\MyProject2015\Data\bin\Debug\Data.dll
+E:\Project\MyProject2015\Data\bin\Debug\Data.pdb
+E:\Project\MyProject2015\Data\bin\Debug\EntityFramework.dll
+E:\Project\MyProject2015\Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.Owin.dll
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.dll
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+E:\Project\MyProject2015\Data\bin\Debug\Newtonsoft.Json.dll
+E:\Project\MyProject2015\Data\bin\Debug\Owin.dll
+E:\Project\MyProject2015\Data\bin\Debug\EntityFramework.xml
+E:\Project\MyProject2015\Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.Owin.xml
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.xml
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+E:\Project\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+E:\Project\MyProject2015\Data\bin\Debug\Newtonsoft.Json.xml
+E:\Project\MyProject2015\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+E:\Project\MyProject2015\Data\obj\Debug\Data.Migrations.InitialCreate.resources
+E:\Project\MyProject2015\Data\obj\Debug\Data.Migrations.them_cho_applicationrole.resources
+E:\Project\MyProject2015\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+E:\Project\MyProject2015\Data\obj\Debug\Data.dll
+E:\Project\MyProject2015\Data\obj\Debug\Data.pdb
+E:\Project\MyProject2015\Data\obj\Debug\Data.Migrations.AddCountry.resources
+D:\MyProject\MyProject2015\Data\bin\Debug\Data.dll.config
+D:\MyProject\MyProject2015\Data\bin\Debug\Data.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\Data.pdb
+D:\MyProject\MyProject2015\Data\bin\Debug\EntityFramework.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.Owin.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\Newtonsoft.Json.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\Owin.dll
+D:\MyProject\MyProject2015\Data\bin\Debug\EntityFramework.xml
+D:\MyProject\MyProject2015\Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.Owin.xml
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.xml
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+D:\MyProject\MyProject2015\Data\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+D:\MyProject\MyProject2015\Data\bin\Debug\Newtonsoft.Json.xml
+D:\MyProject\MyProject2015\Data\obj\Debug\Data.Migrations.InitialCreate.resources
+D:\MyProject\MyProject2015\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+D:\MyProject\MyProject2015\Data\obj\Debug\Data.dll
+D:\MyProject\MyProject2015\Data\obj\Debug\Data.pdb
+D:\MyProject\MyProject\Data\bin\Debug\Data.dll.config
+D:\MyProject\MyProject\Data\bin\Debug\Data.dll
+D:\MyProject\MyProject\Data\bin\Debug\Data.pdb
+D:\MyProject\MyProject\Data\bin\Debug\EntityFramework.dll
+D:\MyProject\MyProject\Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.Owin.dll
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.Owin.Security.dll
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+D:\MyProject\MyProject\Data\bin\Debug\Newtonsoft.Json.dll
+D:\MyProject\MyProject\Data\bin\Debug\Owin.dll
+D:\MyProject\MyProject\Data\bin\Debug\EntityFramework.xml
+D:\MyProject\MyProject\Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.Owin.xml
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.Owin.Security.xml
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+D:\MyProject\MyProject\Data\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+D:\MyProject\MyProject\Data\bin\Debug\Newtonsoft.Json.xml
+D:\MyProject\MyProject\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+D:\MyProject\MyProject\Data\obj\Debug\Data.Migrations.InitialCreate.resources
+D:\MyProject\MyProject\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+D:\MyProject\MyProject\Data\obj\Debug\Data.dll
+D:\MyProject\MyProject\Data\obj\Debug\Data.pdb

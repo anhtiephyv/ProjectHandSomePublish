@@ -1,0 +1,14 @@
+D:\AspProject\MyShop\Service\bin\Debug\Service.dll.config
+D:\AspProject\MyShop\Service\bin\Debug\Service.dll
+D:\AspProject\MyShop\Service\bin\Debug\Service.pdb
+D:\AspProject\MyShop\Service\bin\Debug\EntityFramework.dll
+D:\AspProject\MyShop\Service\bin\Debug\EntityFramework.SqlServer.dll
+D:\AspProject\MyShop\Service\bin\Debug\MyShop.dll
+D:\AspProject\MyShop\Service\bin\Debug\MyShop.pdb
+D:\AspProject\MyShop\Service\bin\Debug\EntityFramework.xml
+D:\AspProject\MyShop\Service\bin\Debug\EntityFramework.SqlServer.xml
+D:\AspProject\MyShop\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+D:\AspProject\MyShop\Service\obj\Debug\Service.Properties.Resources.resources
+D:\AspProject\MyShop\Service\obj\Debug\Service.csproj.GenerateResource.Cache
+D:\AspProject\MyShop\Service\obj\Debug\Service.dll
+D:\AspProject\MyShop\Service\obj\Debug\Service.pdb

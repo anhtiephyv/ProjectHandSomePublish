@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script>
+    bootbox.prompt({
+        title: "Nhập tên người dùng",
+        inputType: 'text',
+        buttons: {
+            cancel: {
+                label: 'Hủy'
+            },
+            confirm: {
+                label: 'Ok'
+            }
+        },
+        closeButton: false,
+        callback: function (result) {
+            $.ajax("Login/Index", function (data) {
+                alert(data);
+            });
+        }
+
+    });
+
+</script>

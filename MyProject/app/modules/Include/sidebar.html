@@ -1,0 +1,219 @@
+﻿<aside>
+  <div id="sidebar" class="nav-collapse " tabindex="5000" style="overflow: hidden; outline: none; margin-left: 0px;">
+    <!-- sidebar menu start-->
+    <ul class="sidebar-menu" style="display: block;">
+      <li>
+          <a class="" href="#!home">
+              <i class="icon_house_alt"></i>
+              <span>Dashboard</span>
+          </a>
+      </li>
+        <!--<li>
+            <a class="" href="#!admin_list">
+                <i class="fa fa-users"></i>
+                <span>Quản trị</span>
+            </a>
+        </li>-->
+        <li>
+            <a class="" href="#!country_list">
+                <i class="fa fa-globe"></i>
+                <span>Quốc gia</span>
+            </a>
+        </li>
+        <li>
+            <a class="" href="#!user_list">
+                <i class="fa fa-user"></i>
+                <span>Người dùng</span>
+            </a>
+        </li>
+      <!--<li class="sub-menu">
+        <a href="javascript:;" class="">
+          <i class="icon_document_alt"></i>
+          <span>Forms</span>
+          <span class="menu-arrow arrow_carrot-right"></span>
+        </a>
+        <ul class="sub">
+          <li>
+            <a class="" href="form_component.html">Form Elements</a>
+          </li>
+          <li>
+            <a class="" href="form_validation.html">Form Validation</a>
+          </li>
+        </ul>
+      </li>
+      <li class="sub-menu">
+        <a href="javascript:;" class="">
+          <i class="icon_desktop"></i>
+          <span>UI Fitures</span>
+          <span class="menu-arrow arrow_carrot-right"></span>
+        </a>
+        <ul class="sub">
+          <li>
+            <a class="" href="general.html">Elements</a>
+          </li>
+          <li>
+            <a class="" href="buttons.html">Buttons</a>
+          </li>
+          <li>
+            <a class="" href="grids.html">Grids</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a class="" href="widgets.html">
+          <i class="icon_genius"></i>
+          <span>Widgets</span>
+        </a>
+      </li>
+      <li>
+        <a class="" href="chart-chartjs.html">
+          <i class="icon_piechart"></i>
+          <span>Charts</span>
+
+        </a>
+
+      </li>
+
+      <li class="sub-menu">
+        <a href="javascript:;" class="">
+          <i class="icon_table"></i>
+          <span>Tables</span>
+          <span class="menu-arrow arrow_carrot-right"></span>
+        </a>
+        <ul class="sub">
+          <li>
+            <a class="" href="basic_table.html">Basic Table</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="sub-menu">
+        <a href="javascript:;" class="">
+          <i class="icon_documents_alt"></i>
+          <span>Pages</span>
+          <span class="menu-arrow arrow_carrot-right"></span>
+        </a>
+        <ul class="sub">
+          <li>
+            <a class="" href="profile.html">Profile</a>
+          </li>
+          <li>
+            <a class="" href="login.html">
+              <span>Login Page</span>
+            </a>
+          </li>
+          <li>
+            <a class="" href="contact.html">
+              <span>Contact Page</span>
+            </a>
+          </li>
+          <li>
+            <a class="" href="blank.html">Blank Page</a>
+          </li>
+          <li>
+            <a class="" href="404.html">404 Error</a>
+          </li>
+        
+         
+        </ul>
+      </li>-->
+
+    </ul>
+    <!-- sidebar menu end-->
+  </div>
+</aside>
+<script>
+    function initializeJS() {
+
+        //tool tips
+        jQuery('.tooltips').tooltip();
+
+        //popovers
+        jQuery('.popovers').popover();
+
+        //custom scrollbar
+        //for html
+        jQuery("html").niceScroll({ styler: "fb", cursorcolor: "#007AFF", cursorwidth: '6', cursorborderradius: '10px', background: '#F7F7F7', cursorborder: '', zindex: '1000' });
+        //for sidebar
+        jQuery("#sidebar").niceScroll({ styler: "fb", cursorcolor: "#007AFF", cursorwidth: '3', cursorborderradius: '10px', background: '#F7F7F7', cursorborder: '' });
+        // for scroll panel
+        jQuery(".scroll-panel").niceScroll({ styler: "fb", cursorcolor: "#007AFF", cursorwidth: '3', cursorborderradius: '10px', background: '#F7F7F7', cursorborder: '' });
+
+        //sidebar dropdown menu
+        jQuery('#sidebar .sub-menu > a').click(function () {
+            var last = jQuery('.sub-menu.open', jQuery('#sidebar'));
+            jQuery('.menu-arrow').removeClass('arrow_carrot-right');
+            jQuery('.sub', last).slideUp(200);
+            var sub = jQuery(this).next();
+            if (sub.is(":visible")) {
+                jQuery('.menu-arrow').addClass('arrow_carrot-right');
+                sub.slideUp(200);
+            } else {
+                jQuery('.menu-arrow').addClass('arrow_carrot-down');
+                sub.slideDown(200);
+            }
+            var o = (jQuery(this).offset());
+            diff = 200 - o.top;
+            if (diff > 0)
+                jQuery("#sidebar").scrollTo("-=" + Math.abs(diff), 500);
+            else
+                jQuery("#sidebar").scrollTo("+=" + Math.abs(diff), 500);
+        });
+
+        // sidebar menu toggle
+        jQuery(function () {
+            function responsiveView() {
+                var wSize = jQuery(window).width();
+                if (wSize <= 768) {
+                    jQuery('#container').addClass('sidebar-close');
+                    jQuery('#sidebar > ul').hide();
+                }
+
+                if (wSize > 768) {
+                    jQuery('#container').removeClass('sidebar-close');
+                    jQuery('#sidebar > ul').show();
+                }
+            }
+            jQuery(window).on('load', responsiveView);
+            jQuery(window).on('resize', responsiveView);
+        });
+
+        jQuery('.toggle-nav').click(function () {
+            if (jQuery('#sidebar > ul').is(":visible") === true) {
+                jQuery('#main-content').css({
+                    'margin-left': '0px'
+                });
+                jQuery('#sidebar').css({
+                    'margin-left': '-180px'
+                });
+                jQuery('#sidebar > ul').hide();
+                jQuery("#container").addClass("sidebar-closed");
+            } else {
+                jQuery('#main-content').css({
+                    'margin-left': '180px'
+                });
+                jQuery('#sidebar > ul').show();
+                jQuery('#sidebar').css({
+                    'margin-left': '0'
+                });
+                jQuery("#container").removeClass("sidebar-closed");
+            }
+        });
+
+        //bar chart
+        if (jQuery(".custom-custom-bar-chart")) {
+            jQuery(".bar").each(function () {
+                var i = jQuery(this).find(".value").html();
+                jQuery(this).find(".value").html("");
+                jQuery(this).find(".value").animate({
+                    height: i
+                }, 2000)
+            })
+        }
+
+    }
+
+    jQuery(document).ready(function () {
+        initializeJS();
+    });
+</script>
