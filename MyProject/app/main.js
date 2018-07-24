@@ -1,4 +1,7 @@
-﻿require.config({
+﻿/// <reference path="Extension/treeview/angular.treeview.js" />
+/// <reference path="Extension/treeview/angular.treeview.js" />
+/// <reference path="Extension/treeview/angular.treeview.js" />
+require.config({
 
     baseUrl: "Content/js",
     paths: {
@@ -22,7 +25,8 @@
         'authenticationService': '../../common/authenticationService',
         'pagerDirective': '../../directives/pagerDirective',
         'dualmultiselect': 'dualmultiselect',
-        'dualmultiselect.min': 'dualmultiselect.min'
+        'dualmultiselect.min': 'dualmultiselect.min',
+        'treeview': '../../Extension/treeview/angular.treeview',
         // 'dialogs': '../../common/dialogs.min',
      
     },

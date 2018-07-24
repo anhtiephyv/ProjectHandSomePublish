@@ -95,14 +95,32 @@
     <Compile Include="Migrations\201807201552064_InitialCreate.Designer.cs">
       <DependentUpon>201807201552064_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807211510531_add_prodctand_category.cs" />
+    <Compile Include="Migrations\201807211510531_add_prodctand_category.Designer.cs">
+      <DependentUpon>201807211510531_add_prodctand_category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807241743166_them_product_price.cs" />
+    <Compile Include="Migrations\201807241743166_them_product_price.Designer.cs">
+      <DependentUpon>201807241743166_them_product_price.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807241817377_xoa_foreignkey.cs" />
+    <Compile Include="Migrations\201807241817377_xoa_foreignkey.Designer.cs">
+      <DependentUpon>201807241817377_xoa_foreignkey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807241830103_test_foreign.cs" />
+    <Compile Include="Migrations\201807241830103_test_foreign.Designer.cs">
+      <DependentUpon>201807241830103_test_foreign.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationRole.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Country.cs" />
     <Compile Include="Models\UserCountry.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\CountryRepository.cs" />
     <Compile Include="Repository\UserCountryRepository.cs" />
     <Compile Include="Repository\UsersRepository.cs" />
@@ -119,6 +137,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807201552064_InitialCreate.resx">
       <DependentUpon>201807201552064_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807211510531_add_prodctand_category.resx">
+      <DependentUpon>201807211510531_add_prodctand_category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807241743166_them_product_price.resx">
+      <DependentUpon>201807241743166_them_product_price.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807241817377_xoa_foreignkey.resx">
+      <DependentUpon>201807241817377_xoa_foreignkey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807241830103_test_foreign.resx">
+      <DependentUpon>201807241830103_test_foreign.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -43,6 +44,11 @@ namespace MyProject.helper
         {
             System.Reflection.PropertyInfo propertyInfo = obj.GetType().GetProperty(property);
             return propertyInfo.GetValue(obj, null);
+        }
+        public static IMappingExpression<TSource, TDestination> IgnoreAll<TSource, TDestination>(this IMappingExpression<TSource, TDestination> expression)
+        {
+            expression.ForAllMembers(x => x.Ignore());
+            return expression;
         }
     }
 }

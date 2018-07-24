@@ -46,3 +46,16 @@ D:\MyProject\MyProject\Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 D:\MyProject\MyProject\Services\obj\Debug\Service.csprojResolveAssemblyReference.cache
 D:\MyProject\MyProject\Services\obj\Debug\Services.dll
 D:\MyProject\MyProject\Services\obj\Debug\Services.pdb
+D:\MyProject\ProjectHandSome\Services\bin\Debug\Services.dll
+D:\MyProject\ProjectHandSome\Services\bin\Debug\Services.pdb
+D:\MyProject\ProjectHandSome\Services\bin\Debug\Data.dll
+D:\MyProject\ProjectHandSome\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MyProject\ProjectHandSome\Services\bin\Debug\EntityFramework.dll
+D:\MyProject\ProjectHandSome\Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\MyProject\ProjectHandSome\Services\bin\Debug\Data.pdb
+D:\MyProject\ProjectHandSome\Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MyProject\ProjectHandSome\Services\bin\Debug\EntityFramework.xml
+D:\MyProject\ProjectHandSome\Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\MyProject\ProjectHandSome\Services\obj\Debug\Service.csprojResolveAssemblyReference.cache
+D:\MyProject\ProjectHandSome\Services\obj\Debug\Services.dll
+D:\MyProject\ProjectHandSome\Services\obj\Debug\Services.pdb

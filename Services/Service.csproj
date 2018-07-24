@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\AdminService.cs" />
+    <Compile Include="Service\Category.cs" />
     <Compile Include="Service\CountriesService.cs" />
     <Compile Include="Service\UserCountryService.cs" />
     <Compile Include="Service\UsersService.cs" />

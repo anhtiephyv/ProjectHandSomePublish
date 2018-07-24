@@ -38,6 +38,7 @@ namespace MyProject.Api
                 HttpResponseMessage response = null;
                 int totalRow = 0;
                 var model = _Country.GetMultiPaging(x => x.CountryName.Contains(keyword) || x.FileUploadName.Contains(keyword) || x.CountryCronyms.Contains(keyword) || string.IsNullOrEmpty(keyword), out totalRow, orderby, sortDir, page, pageSize, null);
+                var test = model.ToList();
                 IEnumerable<CountryModel> modelVm = Mapper.Map<IEnumerable<Country>, IEnumerable<CountryModel>>(model);
 
                 PaginationSet<CountryModel> pagedSet = new PaginationSet<CountryModel>()

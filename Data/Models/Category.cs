@@ -9,18 +9,22 @@ namespace Data.Models
     [Table("Category")]
     public class Category
     {
+        public Category()
+        {
+            CategoryChildren = new HashSet<Category>();
+        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CategoryID { get; set; }
-        //[StringLength(50)]
-        //public string ProductSeri { get; set; }
+        [MaxLength(100)]
         public string CategoryName { get; set; }
+
         public int? ParentCategory { get; set; }
         public int CategoryLevel { get; set; }
-        public string CountryCronyms { get; set; }
-        public int CountryStatus { get; set; }
-        public int? NumberLine { get; set; }
-        public DateTime LastUpdate { get; set; }
-        public virtual IEnumerable<UserCountry> UserCountry { set; get; }
+        public int? DisplayOrder  { get; set; }
+        public string Description { get; set; }
+        public virtual Category CategoryParent { set; get; }
+        public virtual ICollection<Product> Products { set; get; }
+        public virtual ICollection<Category> CategoryChildren { set; get; }
     }
 }

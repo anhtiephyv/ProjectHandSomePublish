@@ -196,6 +196,22 @@ define(['angularAMD', 'angular-ui-router', 'bootstrapUi'], function (angularAMD)
                                 controller: 'userListController',
                                 controllerUrl: '/app/modules/user/userListController.js',
                             }))
+            // Khai báo đường dẫn đến product
+                                        .state('product_list', angularAMD.route({
+                                            url: '/product_list',
+                                            parent: 'base',
+                                            templateUrl: '/app/modules/product/productList.html',
+                                            controller: 'productListController',
+                                            controllerUrl: '/app/modules/product/productListController.js',
+                                        }))
+               // Khai báo đường dẫn đến category
+                                        .state('category_list', angularAMD.route({
+                                            url: '/category_list',
+                                            parent: 'base',
+                                            templateUrl: '/app/modules/category/categoryList.html',
+                                            controller: 'categoryListController',
+                                            controllerUrl: '/app/modules/category/categoryListController.js',
+                                        }))
    ;
             
             $urlRouterProvider.otherwise("/login");

@@ -18,5 +18,6 @@ namespace Data.Models
         public virtual Users User { set; get; }
         [ForeignKey("CountryID")]
         public virtual Country Country { set; get; }
+      
     }
 }

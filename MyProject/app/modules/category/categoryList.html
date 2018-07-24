@@ -1,0 +1,77 @@
+﻿<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-certificate"></i> Loại sản phẩm</h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="#!/home">Trang chủ</a></li>
+            <li><i class="fa fa-globe"></i>Loại sản phẩm</li>
+            <li><i class="fa fa-th-list"></i>Danh sách loại sản phẩm</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+   
+
+    <div class="col-lg-4">
+        <div class="input-group">
+            <input type="text" class="form-control" ng-model="keyword" placeholder="Từ khóa">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+            </span>
+        </div><!-- /input-group -->
+    </div>
+  
+</div>
+
+<div class="row">
+   
+    <div class="col-md-12">
+        <div class="padding-button">
+         
+            <button class="btn btn-success" ng-click="create()">Thêm mới</button>
+        </div>
+        <table class="table table-bordered">
+            <tr>
+                <td style="width: 5%"><input name="all" type="checkbox" ng-click="selectAll()" /></td>
+                <th style="width: 5%">ID</th>
+                <th style="width:20%">Tên</th>
+                <th style="width:10%">Level</th>
+                <th style="width: 10%">Loại cha</th>
+                <th style="width: 20%">Mô tả</th>
+                <!--<th style="width: 15%">File đính kèm</th>
+                <th style="width: 10%">Trạng thái</th>-->
+                <th style="width: 10%"></th>
+            </tr>
+            <tr ng-repeat="item in data">
+                <td><input type="checkbox" ng-model="item.checked" name="all" /></td>
+                <td>{{item.CategoryID}}</td>
+                <td>{{item.CategoryName}}</td>
+              
+                <td>
+                    {{item.CategoryLevel}}
+                </td>
+               
+                <td>{{item.ParentName}}</td>
+
+                <td>{{item.Description}}</td>
+                <td>
+                    <!--<button class="btn btn-sm btn-primary" ng-click="editCountry(item.CountryID)"><i class="fa fa-pencil"></i></button>-->
+                    <button class="btn btn-sm btn-primary" ng-click="editCountry(item.CountryID)"><i class="fa fa-pencil"></i></button>
+                    <button class="btn  btn-sm btn-danger" ng-click="deleteItem(item.CountryID)"><i class="fa fa-trash-o"></i></button>
+                </td>
+            </tr>
+        
+            <tfoot>
+                <tr>
+                    <td colspan="7"><span class="pull-right">Trang: {{page+1}}   {{orderby}}{{sortDir}}- Tổng số bản ghi: {{totalCount}}</span></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="box-footer">
+            <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="search(page)"></pager-directive>
+        </div>
+        <div>
+            <button class="btn btn-danger" ng-click="deleteMultiple()" id="btnDelete" disabled>Xóa nhiều</button>
+        </div>
+     
+    </div>
+</div>

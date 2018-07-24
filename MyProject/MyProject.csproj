@@ -238,6 +238,7 @@
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
     <Compile Include="Api\ApplicationOAuthProviderController.cs" />
+    <Compile Include="Api\CategoryController.cs" />
     <Compile Include="Api\DownloadController.cs" />
     <Compile Include="Api\CountryController.cs" />
     <Compile Include="Api\ApplicationUserController.cs" />
@@ -266,7 +267,9 @@
     <Compile Include="Model\CountryModel.cs" />
     <Compile Include="Model\AdminModel.cs" />
     <Compile Include="Model\AccountModel.cs" />
+    <Compile Include="Model\TreeDataModel.cs" />
     <Compile Include="Model\SelectListModel.cs" />
+    <Compile Include="Model\CategoryModel.cs" />
     <Compile Include="Model\UsersModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -294,6 +297,27 @@
     <Content Include="app\Content\js\dualmultiselect.min.js" />
     <Content Include="app\Content\js\toastr.js" />
     <Content Include="app\Content\js\toastr.min.js" />
+    <Content Include="app\modules\category\categoryCreate.html" />
+    <Content Include="app\modules\category\categoryCreateController.js" />
+    <Content Include="app\modules\category\categoryEdit.html" />
+    <Content Include="app\modules\category\categoryEditController.js" />
+    <Content Include="app\modules\category\categoryList.html" />
+    <Content Include="app\modules\category\categoryListController.js" />
+    <Content Include="app\modules\product\productCreate.html" />
+    <Content Include="app\modules\product\productCreateController.js" />
+    <Content Include="app\modules\product\productEdit.html" />
+    <Content Include="app\modules\product\productEditController.js" />
+    <Content Include="app\modules\product\productList.html" />
+    <Content Include="app\modules\product\productListController.js" />
+    <Content Include="app\Extension\treeview\angular.treeview.js" />
+    <Content Include="app\Extension\treeview\angular.treeview.min.js" />
+    <Content Include="app\Extension\treeview\css\angular.treeview.css" />
+    <Content Include="app\Extension\treeview\img\file.png" />
+    <Content Include="app\Extension\treeview\img\folder-closed.png" />
+    <Content Include="app\Extension\treeview\img\folder.png" />
+    <Content Include="app\Extension\treeview\img\jsfiddle01.png" />
+    <Content Include="app\Extension\treeview\img\jsfiddle02.png" />
+    <Content Include="app\Extension\treeview\img\preview.png" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\flexslider.css" />
     <Content Include="Content\css\memenu.css" />
@@ -331,6 +355,7 @@
     <Content Include="Content\js\jquery.magnific-popup.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="Content\js\memenu.js" />
+    <Content Include="Content\js\modernizr.custom.min.js" />
     <Content Include="Content\js\responsiveslides.min.js" />
     <Content Include="Content\js\simpleCart.min.js" />
     <Content Include="web\account.html" />
@@ -1141,9 +1166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\Content\assets\jquery-file-upload\server\php\files\thumbnail\" />
-    <Folder Include="app\Extension\factory\" />
-    <Folder Include="app\Extension\provider\" />
-    <Folder Include="app\Extension\service\" />
     <Folder Include="App_Data\" />
     <Folder Include="Views\File\" />
     <Folder Include="Views\Layout\" />
