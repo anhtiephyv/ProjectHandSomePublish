@@ -18,7 +18,5 @@ namespace MyProject.Model
         public int? DisplayOrder { get; set; }
         public string Description { get; set; }
         public string ParentName { get; set; }
-        public virtual Category CategoryParent { set; get; }
-        public virtual IEnumerable<Product> Products { set; get; }
     }
 }

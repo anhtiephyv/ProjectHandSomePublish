@@ -436,6 +436,7 @@ D:\MyProject\ProjectHandSome\MyProject\bin\Autofac.dll
 D:\MyProject\ProjectHandSome\MyProject\bin\Autofac.Integration.Mvc.dll
 D:\MyProject\ProjectHandSome\MyProject\bin\Autofac.Integration.WebApi.dll
 D:\MyProject\ProjectHandSome\MyProject\bin\AutoMapper.dll
+D:\MyProject\ProjectHandSome\MyProject\bin\CKFinder.dll
 D:\MyProject\ProjectHandSome\MyProject\bin\Data.dll
 D:\MyProject\ProjectHandSome\MyProject\bin\EntityFramework.dll
 D:\MyProject\ProjectHandSome\MyProject\bin\EntityFramework.SqlServer.dll
@@ -485,6 +486,7 @@ D:\MyProject\ProjectHandSome\MyProject\bin\Autofac.Integration.Mvc.xml
 D:\MyProject\ProjectHandSome\MyProject\bin\Autofac.Integration.WebApi.xml
 D:\MyProject\ProjectHandSome\MyProject\bin\AutoMapper.pdb
 D:\MyProject\ProjectHandSome\MyProject\bin\AutoMapper.xml
+D:\MyProject\ProjectHandSome\MyProject\bin\CKFinder.pdb
 D:\MyProject\ProjectHandSome\MyProject\bin\Microsoft.AI.DependencyCollector.xml
 D:\MyProject\ProjectHandSome\MyProject\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\MyProject\ProjectHandSome\MyProject\bin\Microsoft.AI.Web.xml

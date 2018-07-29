@@ -9,8 +9,8 @@ namespace MyProject.Model
     public class TreeDataModel
     {
         public string id { get; set; }
-        public string label { get; set; }
-        public bool? collapsed { get; set; }
-        public TreeDataModel[] children { get; set; }
+        public string text { get; set; }
+        public bool lazyLoad { get; set; }
+        public string[] tags { get; set; }
     }
 }

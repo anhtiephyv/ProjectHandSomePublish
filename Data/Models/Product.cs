@@ -21,8 +21,9 @@ namespace Data.Models
         public string ProductColor { get; set; }
         public string ProductDescription { get; set; }
         public float ProductPrice { get; set; }
-        public float ProductTags { get; set; }
+     //   public float ProductTags { get; set; }
         [ForeignKey("CategoryID")]
         public virtual Category Category { set; get; }
+        public virtual ICollection<Sale> Sales { get; set; }
     }
 }

@@ -98,11 +98,6 @@ D:\MyProject\MyProject\Data\obj\Debug\Data.Migrations.InitialCreate.resources
 D:\MyProject\MyProject\Data\obj\Debug\Data.csproj.GenerateResource.Cache
 D:\MyProject\MyProject\Data\obj\Debug\Data.dll
 D:\MyProject\MyProject\Data\obj\Debug\Data.pdb
-D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
-D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.InitialCreate.resources
-D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.csproj.GenerateResource.Cache
-D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.dll
-D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.pdb
 D:\MyProject\ProjectHandSome\Data\bin\Debug\Data.dll.config
 D:\MyProject\ProjectHandSome\Data\bin\Debug\Data.dll
 D:\MyProject\ProjectHandSome\Data\bin\Debug\Data.pdb
@@ -127,7 +122,7 @@ D:\MyProject\ProjectHandSome\Data\bin\Debug\Microsoft.Owin.Security.xml
 D:\MyProject\ProjectHandSome\Data\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 D:\MyProject\ProjectHandSome\Data\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 D:\MyProject\ProjectHandSome\Data\bin\Debug\Newtonsoft.Json.xml
-D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.add_prodctand_category.resources
-D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.them_product_price.resources
-D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.xoa_foreignkey.resources
-D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.test_foreign.resources
+D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.InitialCreate.resources
+D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.csproj.GenerateResource.Cache
+D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.dll
+D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.pdb

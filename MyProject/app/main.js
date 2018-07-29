@@ -27,6 +27,9 @@ require.config({
         'dualmultiselect': 'dualmultiselect',
         'dualmultiselect.min': 'dualmultiselect.min',
         'treeview': '../../Extension/treeview/angular.treeview',
+        'uitree': '../../Extension/ui-tree/angular-ui-tree',
+        'bootstraptreeview': '../../Extension/bootstraptreeview/bootstrap-treeview',
+        'ngckEditor': '../../Extension/ngeditor/ng-ckeditor'
         // 'dialogs': '../../common/dialogs.min',
      
     },
@@ -57,8 +60,8 @@ require.config({
         'pagerDirective': ['app'],
         'dualmultiselect': ['angular'],
         'dualmultiselect.min': ['angular']
-       // 'dialogs': ['bootstrapUi','angular-ui-bootstrap','app']
-
+        // 'dialogs': ['bootstrapUi','angular-ui-bootstrap','app']
+       
     },
     //
     //deps: ['../../app']

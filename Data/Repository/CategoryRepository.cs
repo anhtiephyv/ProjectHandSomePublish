@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using Data.DBContext;
 using Data.Models;
 using Data.Base;
+using System.Data.Entity;
 namespace Data.Repository
 {
     public interface ICategoryRepository : IGenericRepository<Category>
     {
         //bool checkCodeExist(string Code, int? ID);
-        //IEnumerable<Category> getCategorybyUserName(string userName);
+        IEnumerable<Category> getCategoryTree(int? ParentCategory);
+       Category getDetail(int id);
     }
     public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
     {
@@ -19,25 +21,14 @@ namespace Data.Repository
             : base(DBcontext)
         {
         }
-        //public bool checkCodeExist(string Code, int? ID)
-        //{
-        //    if (!ID.HasValue)
-        //    {
-        //        return DbContext.Category.Any(x => x.CategoryCronyms == Code);
-        //    }
-        //    return DbContext.Category.Any(x => x.CategoryCronyms == Code && x.CategoryID != ID);
-        //}
-        //public IEnumerable<Category> getCategorybyUserName(string userName)
-        //{
-
-        //    var query = from c in DbContext.Category
-        //                join uc in DbContext.UserCategory
-        //                on c.CategoryID equals uc.CategoryID
-        //                join u in DbContext.UsersUndefined
-        //                 on uc.UserID equals u.UserID
-        //                where c.CategoryStatus != 2 && u.UserName == userName
-        //                select c;
-        //    return query;
-        //}
+        public IEnumerable<Category> getCategoryTree(int? ParentCategory)
+        {
+            return DbContext.Category.Include(x => x.CategoryChildren).Where(c => c.ParentCategory == ParentCategory.Value);
+        }
+        public Category getDetail(int id)
+        {
+            var check = DbContext.Category.Find(id);
+            return check;
+        }
     }
 }

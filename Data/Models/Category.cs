@@ -23,6 +23,7 @@ namespace Data.Models
         public int CategoryLevel { get; set; }
         public int? DisplayOrder  { get; set; }
         public string Description { get; set; }
+        [ForeignKey("ParentCategory")]
         public virtual Category CategoryParent { set; get; }
         public virtual ICollection<Product> Products { set; get; }
         public virtual ICollection<Category> CategoryChildren { set; get; }

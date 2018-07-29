@@ -3,7 +3,7 @@
         <h3 class="page-header"><i class="fa fa-certificate"></i> Loại sản phẩm</h3>
         <ol class="breadcrumb">
             <li><i class="fa fa-home"></i><a href="#!/home">Trang chủ</a></li>
-            <li><i class="fa fa-globe"></i>Loại sản phẩm</li>
+            <li><i class="fa fa-certificate"></i>Loại sản phẩm</li>
             <li><i class="fa fa-th-list"></i>Danh sách loại sản phẩm</li>
         </ol>
     </div>
@@ -36,7 +36,7 @@
                 <th style="width:20%">Tên</th>
                 <th style="width:10%">Level</th>
                 <th style="width: 10%">Loại cha</th>
-                <th style="width: 20%">Mô tả</th>
+                <!--<th style="width: 20%">Mô tả</th>-->
                 <!--<th style="width: 15%">File đính kèm</th>
                 <th style="width: 10%">Trạng thái</th>-->
                 <th style="width: 10%"></th>
@@ -52,26 +52,26 @@
                
                 <td>{{item.ParentName}}</td>
 
-                <td>{{item.Description}}</td>
+                <!--<td>{{item.Description}}</td>-->
                 <td>
                     <!--<button class="btn btn-sm btn-primary" ng-click="editCountry(item.CountryID)"><i class="fa fa-pencil"></i></button>-->
-                    <button class="btn btn-sm btn-primary" ng-click="editCountry(item.CountryID)"><i class="fa fa-pencil"></i></button>
-                    <button class="btn  btn-sm btn-danger" ng-click="deleteItem(item.CountryID)"><i class="fa fa-trash-o"></i></button>
+                    <button class="btn btn-sm btn-primary" ng-click="editcategory(item.CategoryID)"><i class="fa fa-pencil"></i></button>
+                    <button class="btn  btn-sm btn-danger" ng-click="deleteItem(item.CategoryID)"><i class="fa fa-trash-o"></i></button>
                 </td>
             </tr>
         
             <tfoot>
                 <tr>
-                    <td colspan="7"><span class="pull-right">Trang: {{page+1}}   {{orderby}}{{sortDir}}- Tổng số bản ghi: {{totalCount}}</span></td>
+                    <td colspan="6"><span class="pull-right">Trang: {{page+1}}   {{orderby}}{{sortDir}}- Tổng số bản ghi: {{totalCount}}</span></td>
                 </tr>
             </tfoot>
         </table>
         <div class="box-footer">
             <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="search(page)"></pager-directive>
         </div>
-        <div>
+        <!--<div>
             <button class="btn btn-danger" ng-click="deleteMultiple()" id="btnDelete" disabled>Xóa nhiều</button>
-        </div>
+        </div>-->
      
     </div>
 </div>

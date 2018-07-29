@@ -27,7 +27,7 @@ namespace Data.DBContext
         {
             return new MyShopDBContext();
         }
-        // 1 cú tạo các bảng như userrole, userlogin,role, userclaim
+        // 1 cú tạo relationship
         protected override void OnModelCreating(DbModelBuilder builder)
         {
             builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId }).ToTable("ApplicationUserRoles");

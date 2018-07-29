@@ -15,6 +15,7 @@ namespace Data.Base
         //Class variables are declared for the database context and for the entity set that the repository is instantiated for
         internal MyShopDBContext context;
         internal DbSet<TEntity> dbSet;
+      
         //The constructor accepts a database context instance and initializes the entity set variable:
         public GenericRepository(MyShopDBContext context)
         {
@@ -117,7 +118,7 @@ The code in the Get method creates an IQueryable object and then applies the fil
             }
             int skipCount = page * pageSize;
             //   qu
-              query = query.Skip(skipCount).Take(pageSize).AsQueryable();
+              query = query.Skip(skipCount).Take(pageSize);
 
             return query;
         }
@@ -125,6 +126,7 @@ The code in the Get method creates an IQueryable object and then applies the fil
         public virtual TEntity GetByID(object id)
         {
             return dbSet.Find(id);
+ 
         }
         //Create
         public virtual void Create(TEntity entity)

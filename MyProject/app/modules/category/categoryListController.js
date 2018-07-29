@@ -35,7 +35,7 @@
                     if (result) {
                         var listId = [];
                         $.each($scope.selected, function (i, item) {
-                            listId.push(item.categoryID);
+                            listId.push(item.CategoryID);
                         });
                         var config = {
                             params: {
@@ -175,9 +175,9 @@
          
             require(
            [
-            '/app/modules/category/categoryCreateController.js','treeview'
+            '/app/modules/category/categoryCreateController.js', 'ngckEditor', 'bootstraptreeview'
            ],
-           function (categoryCreateController,treeview) {
+           function (categoryCreateController, ngckEditor, boostraptreeview) {
                $scope.myModalInstance = $modal.open({
                    templateUrl: modalHtml, // loads the template
                   
@@ -191,20 +191,22 @@
                 $scope.myModalInstance.close();
             }
 
+            
+
         };
         function editcategory(id) {
             var modalHtml = 'modules/category/categoryEdit.html';
             debugger;
             require(
            [
-            '/app/modules/category/categoryEditController.js'
+            '/app/modules/category/categoryEditController.js', 'ngckEditor', 'bootstraptreeview'
            ],
-           function (categoryEditController) {
+           function (categoryEditController, ngckEditor, boostraptreeview) {
                $scope.myModalInstance = $modal.open({
                    templateUrl: modalHtml,
                    controller: categoryEditController,
                    windowClass: 'app-modal-window',
-                   backdrop: true,
+                   backdrop: false,
                });
            });
             $rootScope.modalClose = function () {

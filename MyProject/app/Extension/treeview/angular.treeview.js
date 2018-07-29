@@ -27,7 +27,7 @@
 
     angular.module('angularTreeview', []).directive('treeModel', ['$compile', function ($compile) {
         return {
-            restrict: 'A',
+            restrict: "A",
             link: function (scope, element, attrs) {
                 //tree id
                 var treeId = attrs.treeId;
@@ -43,16 +43,17 @@
 
                 //children
                 var nodeChildren = attrs.nodeChildren || 'children';
+                debugger;
                 var nodefunction = attrs.nodefunction || 'nodefunction';
                 //tree template
                 var template =
 					'<ul>' +
 						'<li data-ng-repeat="node in ' + treeModel + '">' +
-							'<i class="collapsed" data-ng-show="node.' + nodeChildren + '.length && node.collapsed" data-ng-click="' + treeId + '.selectNodeHead(node,' + nodefunction + ')"></i>' +
-							'<i class="expanded" data-ng-show="node.' + nodeChildren + '.length && !node.collapsed" data-ng-click="' + treeId + '.selectNodeHead(node,' + nodefunction + ')"></i>' +
+							'<i class="collapsed" data-ng-show="node.collapsed" data-ng-click="' + treeId + '.selectNodeHead(node,' + nodefunction + ')"></i>' +
+							'<i class="expanded" data-ng-show="!node.collapsed" data-ng-click="' + treeId + '.selectNodeHead(node,' + nodefunction + ')"></i>' +
 							'<i class="normal" data-ng-hide="node.' + nodeChildren + '.length"></i> ' +
 							'<span data-ng-class="node.selected" data-ng-click="' + treeId + '.selectNodeLabel(node)">{{node.' + nodeLabel + '}}</span>' +
-							'<div data-ng-hide="node.collapsed" data-tree-id="' + treeId + '" data-tree-model="node.' + nodeChildren + '" data-node-id=' + nodeId + ' data-node-label=' + nodeLabel + ' data-node-children=' + nodeChildren + ' data-node-nodefunction = ' + nodefunction + '></div>' +
+							'<div data-ng-hide="node.collapsed" data-tree-id="' + treeId + '" data-tree-model="node.' + nodeChildren + '" data-node-id=' + nodeId + ' data-node-label=' + nodeLabel + ' data-node-children=' + nodeChildren + ' data-nodefunction = ' + nodefunction + '></div>' +
 						'</li>' +
 					'</ul>';
 
@@ -69,6 +70,11 @@
                         //if node head clicks,
                         scope[treeId].selectNodeHead = scope[treeId].selectNodeHead || function (selectedNode, nodefunction) {
                             debugger;
+                            scope.GetCategoryTreeDataByParent(selectedNode.id).then(function (rest) {
+                                debugger;
+                                selectedNode.children = rest
+                            });
+                        
                             //Collapse or Expand
                             selectedNode.collapsed = !selectedNode.collapsed;
                         };
