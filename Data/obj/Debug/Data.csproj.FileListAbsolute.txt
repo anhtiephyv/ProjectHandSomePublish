@@ -126,3 +126,5 @@ D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.InitialCreate.resour
 D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.csproj.GenerateResource.Cache
 D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.dll
 D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.pdb
+D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.doi_ten_parent.resources

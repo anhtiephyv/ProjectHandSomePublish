@@ -23,7 +23,7 @@ namespace Data.Repository
         }
         public IEnumerable<Category> getCategoryTree(int? ParentCategory)
         {
-            return DbContext.Category.Include(x => x.CategoryChildren).Where(c => c.ParentCategory == ParentCategory.Value);
+            return DbContext.Category.Include(x => x.CategoryChildren).Where(c => c.ParentCategoryID == ParentCategory.Value);
         }
         public Category getDetail(int id)
         {

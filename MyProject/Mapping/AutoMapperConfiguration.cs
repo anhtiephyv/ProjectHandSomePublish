@@ -33,7 +33,7 @@ namespace MyProject.Mapping
 .ForMember(des => des.CategoryName, mo => mo.MapFrom(src => src.CategoryName))
 .ForMember(des => des.CategoryLevel, mo => mo.MapFrom(src => src.CategoryLevel))
 .ForMember(des => des.Description, mo => mo.MapFrom(src => src.Description))
-.ForMember(des => des.ParentCategory, mo => mo.MapFrom(src => src.ParentCategory))
+.ForMember(des => des.ParentCategoryID, mo => mo.MapFrom(src => src.ParentCategory))
 .ForMember(des => des.CategoryLevel, mo => mo.MapFrom(src => src.CategoryLevel))
 .ForMember(des => des.DisplayOrder, mo => mo.MapFrom(src => src.DisplayOrder));
 

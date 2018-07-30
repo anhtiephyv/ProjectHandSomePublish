@@ -6,7 +6,7 @@
         $scope.category = {
             categoryName: "",
             categoryLevel: "1",
-            ParentCategory: null,
+            ParentCategoryID: null,
             ParentName: null,
             Description: null,
             DisplayOrder: null,

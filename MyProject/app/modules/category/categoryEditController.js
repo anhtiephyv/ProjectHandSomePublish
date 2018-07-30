@@ -7,7 +7,7 @@
             CategoryID:null,
             CategoryName: "",
             CategoryLevel: "1",
-            ParentCategory: null,
+            ParentCategoryID: null,
             ParentName: null,
             Description: null,
             DisplayOrder: null,

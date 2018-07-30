@@ -95,6 +95,10 @@
     <Compile Include="Migrations\201807291226064_InitialCreate.Designer.cs">
       <DependentUpon>201807291226064_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807292340342_doi_ten_parent.cs" />
+    <Compile Include="Migrations\201807292340342_doi_ten_parent.Designer.cs">
+      <DependentUpon>201807292340342_doi_ten_parent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationRole.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -122,6 +126,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201807291226064_InitialCreate.resx">
       <DependentUpon>201807291226064_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807292340342_doi_ten_parent.resx">
+      <DependentUpon>201807292340342_doi_ten_parent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

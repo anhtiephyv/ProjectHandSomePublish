@@ -37,7 +37,7 @@ namespace Data.DBContext
             builder.Entity<Category>()
                            .HasMany(e => e.CategoryChildren)
                 .WithOptional(e => e.CategoryParent)
-                .HasForeignKey(e => e.ParentCategory);
+                .HasForeignKey(e => e.ParentCategoryID);
 
         }
     }

@@ -19,11 +19,11 @@ namespace Data.Models
         [MaxLength(100)]
         public string CategoryName { get; set; }
 
-        public int? ParentCategory { get; set; }
+        public int? ParentCategoryID { get; set; }
         public int CategoryLevel { get; set; }
         public int? DisplayOrder  { get; set; }
         public string Description { get; set; }
-        [ForeignKey("ParentCategory")]
+        [ForeignKey("ParentCategoryID")]
         public virtual Category CategoryParent { set; get; }
         public virtual ICollection<Product> Products { set; get; }
         public virtual ICollection<Category> CategoryChildren { set; get; }
