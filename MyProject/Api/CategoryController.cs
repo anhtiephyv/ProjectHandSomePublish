@@ -35,7 +35,7 @@ namespace MyProject.Api
             {
                 HttpResponseMessage response = null;
                 int totalRow = 0;
-                var model = _Category.GetMultiPaging(x => x.CategoryName.Contains(keyword) || string.IsNullOrEmpty(keyword), out totalRow, orderby, sortDir, page, pageSize, null);
+                var model = _Category.GetMultiPaging(x => x.CategoryName.Contains(keyword) || string.IsNullOrEmpty(keyword), out totalRow, orderby, sortDir, page, pageSize, new string[] { "CategoryParent" });
                 var check = model.ToList();
                 IEnumerable<CategoryModel> modelVm = Mapper.Map<IEnumerable<Category>, IEnumerable<CategoryModel>>(model);
 
