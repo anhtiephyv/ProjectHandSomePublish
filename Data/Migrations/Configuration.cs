@@ -9,7 +9,7 @@
     using DBContext;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
-
+    using System.Collections.Generic;
     internal sealed class Configuration : DbMigrationsConfiguration<Data.DBContext.MyShopDBContext>
     {
         public Configuration()
@@ -24,8 +24,8 @@
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
             // Code khi chạy DB sẽ tự chạy
-           CreateUser(context);
-
+            CreateUser(context);
+            CreateColorAndSize(context);
         }
         private string Encryptdata(string password)
         {
@@ -76,7 +76,7 @@
 
                 var adminUser = manager.FindByEmail("tiepnv022093@gmail.com.com");
 
-           //     manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+                //     manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
             }
 
             //if (context.ApplicationGroups.Count() == 0)
@@ -99,7 +99,20 @@
             //        UserId = adminUser.Id,
             //        GroupId = group.ID
             //    });
-            //}
+        }
+        private void CreateColorAndSize(MyShopDBContext context)
+        {
+            if (context.Size.Count() == 0)
+            {
+                List<Size> ListSize = new List<Size>()  {
+                new Size() { SizeName="XS",SizeValue="XS" },
+                new Size() { SizeName="S",SizeValue="M"},
+                new Size() { SizeName="L",SizeValue="L" },
+                new Size() { SizeName="XL ",SizeValue="#ffffff" },
+                new Size() { SizeName="XXL",SizeValue="XXL" },
+            };
+                context.Size.AddRange(ListSize);
+            }
 
         }
     }

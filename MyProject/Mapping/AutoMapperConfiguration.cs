@@ -21,6 +21,7 @@ namespace MyProject.Mapping
 
                 //     cfg.CreateMap<Category, CategoryModel>().IgnoreAll();
                 cfg.CreateMap<Category, CategoryModel>()
+
               .ForMember(des => des.CategoryID, mo => mo.MapFrom(src => src.CategoryID))
               .ForMember(des => des.CategoryName, mo => mo.MapFrom(src => src.CategoryName))
               .ForMember(des => des.CategoryLevel, mo => mo.MapFrom(src => src.CategoryLevel))
@@ -42,6 +43,24 @@ namespace MyProject.Mapping
 .ForMember(des => des.text, mo => mo.MapFrom(src => src.CategoryName))
 .ForMember(des => des.lazyLoad, mo => mo.MapFrom(src => src.CategoryChildren.Any()))
 .ForMember(des => des.tags, mo => mo.MapFrom(src => src.CategoryChildren.Count.ToString().ToArray()))
+.ForAllOtherMembers(opts => opts.Ignore());
+                cfg.CreateMap<Product, ProductModel>()
+.ForMember(des => des.ProductID, mo => mo.MapFrom(src => src.ProductID))
+.ForMember(des => des.ProductName, mo => mo.MapFrom(src => src.ProductName))
+.ForMember(des => des.CategoryID, mo => mo.MapFrom(src => src.CategoryID))
+.ForMember(des => des.CategoryName, mo => mo.MapFrom(src => src.ProductCategory.CategoryName))
+.ForMember(des => des.ProductDescription, mo => mo.MapFrom(src => src.ProductDescription))
+.ForMember(des => des.HomeFlag, mo => mo.MapFrom(src => src.HomeFlag))
+.ForMember(des => des.HotFlag, mo => mo.MapFrom(src => src.HotFlag))
+.ForMember(des => des.ViewCount, mo => mo.MapFrom(src => src.ViewCount));
+                cfg.CreateMap<ProductModel, Product>()
+.ForMember(des => des.ProductID, mo => mo.MapFrom(src => src.ProductID))
+.ForMember(des => des.ProductName, mo => mo.MapFrom(src => src.ProductName))
+.ForMember(des => des.CategoryID, mo => mo.MapFrom(src => src.CategoryID))
+.ForMember(des => des.ProductDescription, mo => mo.MapFrom(src => src.ProductDescription))
+.ForMember(des => des.HomeFlag, mo => mo.MapFrom(src => src.HomeFlag))
+.ForMember(des => des.HotFlag, mo => mo.MapFrom(src => src.HotFlag))
+.ForMember(des => des.ViewCount, mo => mo.MapFrom(src => src.ViewCount))
 .ForAllOtherMembers(opts => opts.Ignore());
             });
 

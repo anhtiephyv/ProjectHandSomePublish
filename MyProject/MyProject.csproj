@@ -242,6 +242,7 @@
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
     <Compile Include="Api\ApplicationOAuthProviderController.cs" />
+    <Compile Include="Api\ProductController.cs" />
     <Compile Include="Api\CategoryController.cs" />
     <Compile Include="Api\DownloadController.cs" />
     <Compile Include="Api\CountryController.cs" />
@@ -271,6 +272,7 @@
     <Compile Include="Model\CountryModel.cs" />
     <Compile Include="Model\AdminModel.cs" />
     <Compile Include="Model\AccountModel.cs" />
+    <Compile Include="Model\ProductModel.cs" />
     <Compile Include="Model\TreeDataModel.cs" />
     <Compile Include="Model\SelectListModel.cs" />
     <Compile Include="Model\CategoryModel.cs" />

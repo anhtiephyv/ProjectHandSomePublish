@@ -19,3 +19,23 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
+/*Custom Css*/
+.groupDiscount {
+    position: absolute;
+    z-index: 1;
+    right: -.2rem;
+    top: 0;
+}
+.discountLabel, .discountLabelApp {
+    width: 3.4rem;
+    height: 4.4rem;
+    padding-top: 2.2rem;
+    font-size: 1.3rem;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…B0cmFuc2Zvcm09InRyYW5zbGF0ZSg1IDE4KSIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+Cg==);
+}

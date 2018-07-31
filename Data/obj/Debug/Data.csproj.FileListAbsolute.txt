@@ -128,3 +128,6 @@ D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.dll
 D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.pdb
 D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
 D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.doi_ten_parent.resources
+D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.them_bang_size.resources
+D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.add_productItems.resources
+D:\MyProject\ProjectHandSome\Data\obj\Debug\Data.Migrations.add_tag.resources

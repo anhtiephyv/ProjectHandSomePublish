@@ -1,7 +1,7 @@
 ﻿(function (app) {
     'use strict';
     debugger;
-    app.controller('countryListController', ['$scope', 'apiService', 'notificationService', '$filter', '$modal','$rootScope','$http',
+    app.controller('productListController', ['$scope', 'apiService', 'notificationService', '$filter', '$modal','$rootScope','$http',
     function userListController($scope, apiService, notificationService, $filter,$modal,$rootScope,$http) {
 
         debugger;
@@ -14,7 +14,7 @@
         $scope.deleteItem = deleteItem;
         $scope.selectAll = selectAll;
         $scope.create = create;
-        $scope.editCountry = editCountry;
+        $scope.editproduct = editproduct;
         $scope.deleteMultiple = deleteMultiple;
         $scope.keyword = '';
         function deleteMultiple() {
@@ -35,14 +35,14 @@
                     if (result) {
                         var listId = [];
                         $.each($scope.selected, function (i, item) {
-                            listId.push(item.CountryID);
+                            listId.push(item.productID);
                         });
                         var config = {
                             params: {
                                 checkedList: JSON.stringify(listId)
                             }
                         }
-                        apiService.del('api/Country/deletemulti', config, function (result) {
+                        apiService.del('api/product/deletemulti', config, function (result) {
                             notificationService.displaySuccess('Xóa thành công ' + result.data + ' bản ghi.');
                             search();
                         }, function (error) {
@@ -119,7 +119,7 @@
                                 id: id
                             }
                         }
-                        apiService.del('/api/Country/delete/', config, function () {
+                        apiService.del('/api/product/delete/', config, function () {
                             notificationService.displaySuccess('Đã xóa thành công.');
                             search();
                         },
@@ -140,13 +140,13 @@
                     keyword:$scope.keyword,
                     page: page,
                     pageSize: 10,
-                    orderby: "LastUpdate",
+                    orderby: "ProductID",
                     sortDir: "desc",
                     filter: $scope.filterExpression
                 }
             }
 
-            apiService.get('api/Country/getlistpaging', config, dataLoadCompleted, dataLoadFailed);
+            apiService.get('api/product/getlistpaging', config, dataLoadCompleted, dataLoadFailed);
         }
 
         function dataLoadCompleted(result) {
@@ -161,6 +161,7 @@
             }
         }
         function dataLoadFailed(response) {
+            debugger;
             notificationService.displayError(response.data);
         }
 
@@ -171,18 +172,18 @@
 
         $scope.search();
         function create() {
-            var modalHtml = 'modules/country/countryCreate.html';
+            var modalHtml = 'modules/product/productCreate.html';
          
             require(
            [
-            '/app/modules/country/countryCreateController.js'
+            '/app/modules/product/productCreateController.js'
            ],
-           function (countryCreateController) {
+           function (productCreateController) {
                $scope.myModalInstance = $modal.open({
                    templateUrl: modalHtml, // loads the template
                   
                   // windowClass: 'modal-dialog modal-sm', // windowClass - additional CSS class(es) to be added to a modal window template
-                   controller: countryCreateController,
+                   controller: productCreateController,
                    windowClass: 'app-modal-window',
                    backdrop: true,
                });//end of modal.open
@@ -192,17 +193,17 @@
             }
 
         };
-        function editCountry(id) {
-            var modalHtml = 'modules/country/countryEdit.html';
+        function editproduct(id) {
+            var modalHtml = 'modules/product/productEdit.html';
             debugger;
             require(
            [
-            '/app/modules/country/countryEditController.js'
+            '/app/modules/product/productEditController.js'
            ],
-           function (countryEditController) {
+           function (productEditController) {
                $scope.myModalInstance = $modal.open({
                    templateUrl: modalHtml,
-                   controller: countryEditController,
+                   controller: productEditController,
                    windowClass: 'app-modal-window',
                    backdrop: true,
                });
@@ -210,7 +211,7 @@
             $rootScope.modalClose = function () {
                 $scope.myModalInstance.close();
             }
-            $rootScope.countryId = id;
+            $rootScope.productId = id;
         };
     }]);
 })(angular.module('MyApp'));

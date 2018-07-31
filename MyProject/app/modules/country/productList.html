@@ -35,7 +35,8 @@
                 <th style="width: 5%">ID</th>
                 <th style="width:20%">Tên</th>
                 <th style="width:10%">Loại sản phẩm</th>
-                <th style="width: 10%">Lượt xem</th>
+                <th style="width:10%">Giá</th>
+                <th style="width: 10%">Số lượng còn</th>
                 <th style="width: 10%">Trạng thái</th>
                 <th style="width: 10%"></th>
             </tr>
@@ -47,11 +48,15 @@
                 <td>
                     {{item.CategoryName}}
                 </td>
-                <td>{{item.ViewCount}}</td>
-              
+                <td><img src="data:image/jpeg;base64,{{item.CountryFlag}}" width="32px" height="32px"></td>
+                <td>{{item.NumberLine}}</td>
                 <td>
-                    <span style="color:green" ng-if="item.ProductStatus==1">Đang hoạt động</span>
-                    <span style="color:red" ng-if="item.ProductStatus==2">ngưng hoạt động</span>
+                    <!--<a title="{{item.FileUploadName}}" ng-click="downloadfile(item.CountryID)">{{item.FileUploadName}}</a>-->
+                    <a href="../api/Download/getFile/{{item.CountryID}}" target="_blank">{{item.FileUploadName}}</a>
+                </td>
+                <td>
+                    <span style="color:green" ng-if="item.CountryStatus==1">Đang hoạt động</span>
+                    <span style="color:red" ng-if="item.CountryStatus==2">ngưng hoạt động</span>
                 </td>
                 <td>
                     <!--<button class="btn btn-sm btn-primary" ng-click="editCountry(item.CountryID)"><i class="fa fa-pencil"></i></button>-->
