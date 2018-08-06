@@ -16,16 +16,20 @@ namespace Data.Models
         public string ProductName { get; set; }
 
         public int CategoryID { get; set; }
-       
-        public string ProductDescription { get; set; }
+
+        public string MetaDescription { get; set; }
         public bool? HomeFlag { set; get; }
+        public string Alias { set; get; }
         public bool? HotFlag { set; get; }
-        public int? ViewCount { set; get; }
+        public int ViewCount { set; get; }
         public int? ProductStatus { set; get; }
-     //   public float ProductTags { get; set; }
+        public string MetaKeyword { set; get; }
+        [MaxLength(256)]
+        public string Image { set; get; }
+
+        [Column(TypeName = "xml")]
+        public string MoreImages { set; get; }
         [ForeignKey("CategoryID")]
         public virtual Category ProductCategory { set; get; }
-        public virtual ICollection<Tag> Tag { get; set; }
-        public virtual ICollection<Sale> Sale { get; set; }
     }
 }

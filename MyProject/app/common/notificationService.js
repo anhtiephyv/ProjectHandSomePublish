@@ -5,7 +5,6 @@ define(['app'], function (app) {
     app.factory('notificationService', notificationService);
 
     function notificationService() {
-        debugger;
         toastr.options = {
             "debug": false,
             "positionClass": "toast-bottom-right",

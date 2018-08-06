@@ -17,7 +17,6 @@
             var datareturn = null;
             apiService.get('api/category/gettreedata', null,
                      function (result) {
-                         debugger;
                          $('#treeview-checkable').treeview({
                              data: result.data,
                              showIcon: false,
@@ -36,7 +35,6 @@
                              showCheckbox: false,
                              color: "#428bca",
                              onNodeSelected: function (event, node) {
-                                 debugger;
                                  $scope.category.ParentCategory = node.id;
                                  $scope.category.ParentName = node.text;
                                  $scope.selectdNode = node;
@@ -52,15 +50,10 @@
         $scope.dataErorr = false;
         $scope.Addcategory =
         function () {
-            debugger;
-
             //$scope.product.MoreImages = JSON.stringify($scope.moreImages)
             apiService.post('api/category/create', $scope.category,
                 function (result) {
-                    debugger;
                     notificationService.displaySuccess(result.data.CategoryName + ' đã được thêm mới.');
-
-                    debugger;
                     $rootScope.clearSearch();
                     $rootScope.modalClose();
                     //  $state.go('category_list');
@@ -70,13 +63,11 @@
 
         }
         $scope.UnselectNode = function UnselectNode() {
-            debugger;
             $('#treeview-checkable').treeview('unselectNode', [$scope.selectdNode, { silent: true }]);
             $scope.category.ParentCategory = null;
             $scope.category.ParentName = null;
         }
         $scope.Closemodal = function () {
-            debugger;
             $rootScope.modalClose();
         }
         GetCategoryTreeData();

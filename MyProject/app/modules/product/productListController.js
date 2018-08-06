@@ -1,10 +1,7 @@
 ﻿(function (app) {
     'use strict';
-    debugger;
     app.controller('productListController', ['$scope', 'apiService', 'notificationService', '$filter', '$modal','$rootScope','$http',
     function userListController($scope, apiService, notificationService, $filter,$modal,$rootScope,$http) {
-
-        debugger;
         $scope.loading = true;
         $scope.data = [];
         $scope.page = 0;
@@ -31,7 +28,6 @@
                     }
                 },
                 callback: function (result) {
-                    debugger;
                     if (result) {
                         var listId = [];
                         $.each($scope.selected, function (i, item) {
@@ -51,8 +47,6 @@
                     }
                 }
             });
-            debugger;
-   
         }
 
         $scope.isAll = false;
@@ -112,7 +106,6 @@
                     }
                 },
                 callback: function (result) {
-                    debugger;
                     if (result) {
                         var config = {
                             params: {
@@ -133,7 +126,6 @@
         }
         function search(page) {
             page = page || 0;
-            debugger;
             $scope.loading = true;
             var config = {
                 params: {
@@ -161,7 +153,6 @@
             }
         }
         function dataLoadFailed(response) {
-            debugger;
             notificationService.displayError(response.data);
         }
 
@@ -169,22 +160,23 @@
             $scope.filterExpression = '';
             search();
         }
-
+        $scope.tags = ['bootstrap', 'list', 'angular'];
+        $scope.allTags = ['bootstrap', 'list', 'angular', 'directive', 'edit', 'label', 'modal', 'close', 'button', 'grid', 'javascript', 'html', 'badge', 'dropdown'];
         $scope.search();
         function create() {
             var modalHtml = 'modules/product/productCreate.html';
          
             require(
            [
-            '/app/modules/product/productCreateController.js'
+            '/app/modules/product/productCreateController.js', 'ngckEditor', 'bootstraptreeview', 'tagIt'
            ],
-           function (productCreateController) {
+           function (productCreateController, ngckEditor, bootstraptreeview, tagIt) {
                $scope.myModalInstance = $modal.open({
                    templateUrl: modalHtml, // loads the template
                   
                   // windowClass: 'modal-dialog modal-sm', // windowClass - additional CSS class(es) to be added to a modal window template
                    controller: productCreateController,
-                   windowClass: 'app-modal-window',
+                   windowClass: 'app-modal-window-large',
                    backdrop: true,
                });//end of modal.open
            });
@@ -195,7 +187,6 @@
         };
         function editproduct(id) {
             var modalHtml = 'modules/product/productEdit.html';
-            debugger;
             require(
            [
             '/app/modules/product/productEditController.js'

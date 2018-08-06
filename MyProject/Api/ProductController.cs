@@ -22,9 +22,13 @@ namespace MyProject.Api
     public class ProductController : BaseController
     {
         private IProductService _Product;
-        public ProductController(IProductService ProductService)
+        private ITagService _Tag;
+        private IProductTagRepository _ProductTagReporistory;
+        public ProductController(IProductService ProductService, ITagService TagService, IProductTagRepository ProductTagReporistory)
         {
+            _Tag = TagService;
             _Product = ProductService;
+            _ProductTagReporistory = ProductTagReporistory;
         }
         [Route("getlistpaging")]
         [HttpGet]
@@ -53,31 +57,34 @@ namespace MyProject.Api
             });
         }
 
-        //[Route("create")]
-        //[HttpPost]
-        //public HttpResponseMessage Create(HttpRequestMessage request, ProductModel ProductVm)
-        //{
-        //    return CreateHttpResponse(request, () =>
-        //    {
-        //        HttpResponseMessage response = null;
-        //        if (!ModelState.IsValid)
-        //        {
-        //            response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
-        //        }
-        //        else
-        //        {
-        //            var modelVm = Mapper.Map<ProductModel, Product>(ProductVm);
+        [Route("create")]
+        [HttpPost]
+        public HttpResponseMessage Create(HttpRequestMessage request, ProductModel ProductVm)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var TagsCreate = ProductVm.Tags.Where(x => x.isNew == true).ToList();
+                    var ListTags = Mapper.Map<List<TagModel>, List<Tag>>(TagsCreate);
+                    var ListTagCreate = _Tag.AddTags(ListTags);
 
-        //            _Product.Create(modelVm);
-        //            _Product.Save();
+                    var modelVm = Mapper.Map<ProductModel, Product>(ProductVm);
+                    _Product.Create(modelVm);
+                    _Product.Save();
 
-        //            var responseData = Mapper.Map<Product, ProductModel>(modelVm);
-        //            response = request.CreateResponse(HttpStatusCode.Created, responseData);
-        //        }
+                    var responseData = Mapper.Map<Product, ProductModel>(modelVm);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
+                }
 
-        //        return response;
-        //    });
-        //}
+                return response;
+            });
+        }
         //[Route("checkcodeExistEdit")]
         //[HttpGet]
         //public HttpResponseMessage checkcodeExistEdit(HttpRequestMessage request, string ProductCode, int? Id)
@@ -170,6 +177,51 @@ namespace MyProject.Api
                     _Product.Save();
 
                     response = request.CreateResponse(HttpStatusCode.OK, listItem.Count);
+                }
+
+                return response;
+            });
+        }
+        [Route("createtag")]
+        [HttpPost]
+        public HttpResponseMessage CreateTag(HttpRequestMessage request, List<TagModel> TagsVm)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+
+                    var TagsCreate = TagsVm.Where(x => x.isNew == true).ToList();
+                    var ListTags = Mapper.Map<List<TagModel>, List<Tag>>(TagsCreate);
+                    var ListTagCreate = _Tag.AddTags(ListTags);
+                    var responseData = true;
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
+                }
+
+                return response;
+            });
+        }
+        [Route("getlisttag")]
+        [HttpGet]
+        public HttpResponseMessage getlisttag(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var AllTag = _Tag.Get().ToList();
+                    var responseData = Mapper.Map<List<Tag>, List<TagModel>>(AllTag);
+                    response = request.CreateResponse(HttpStatusCode.OK, responseData);
                 }
 
                 return response;

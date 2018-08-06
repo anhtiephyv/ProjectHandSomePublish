@@ -16,7 +16,6 @@
             var datareturn = null;
             apiService.get('api/category/gettreedata', null,
                      function (result) {
-                         debugger;
                          $('#treeview-checkable').treeview({
                              data: result.data,
                              showIcon: false,
@@ -34,7 +33,6 @@
                              showCheckbox: false,
                              color: "#428bca",
                              onNodeSelected: function (event, node) {
-                                 debugger;
                                  $scope.category.ParentCategory = node.id;
                                  $scope.category.ParentName = node.text;
                              },
@@ -54,8 +52,6 @@
                 apiService.post('api/category/Update', $scope.category,
                     function (result) {
                         notificationService.displaySuccess(result.data.categoryName + ' đã được cập nhật.');
-
-                        debugger;
                         $rootScope.clearSearch();
                         $rootScope.modalClose();
                         //  $state.go('category_list');
@@ -67,7 +63,6 @@
         function loadDetail() {
             apiService.get('/api/category/detail/' + $rootScope.categoryId, null,
             function (result) {
-                debugger;
                 $scope.category = result.data;
                 $scope.category.categoryLevel = result.data.CategoryLevel.toString();
             },
@@ -76,7 +71,6 @@
             });
         }
         $scope.Closemodal = function () {
-            debugger;
             $rootScope.modalClose();
         }
         loadDetail();

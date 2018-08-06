@@ -22,6 +22,8 @@ namespace Data.DBContext
         public DbSet<Product> Product { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<Size> Size { get; set; }
+        public DbSet<Tag> Tag { get; set; }
+        public DbSet<ProductTag> ProductTag { get; set; }
      //   public DbSet<Color> Color { get; set; }
 
         //  public DbSet<ApplicationUser> ApplicationIdentity  { get; set;}

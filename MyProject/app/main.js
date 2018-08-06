@@ -29,7 +29,12 @@ require.config({
         'treeview': '../../Extension/treeview/angular.treeview',
         'uitree': '../../Extension/ui-tree/angular-ui-tree',
         'bootstraptreeview': '../../Extension/bootstraptreeview/bootstrap-treeview',
-        'ngckEditor': '../../Extension/ngeditor/ng-ckeditor'
+        'ngckEditor': '../../Extension/ngeditor/ng-ckeditor',
+        'seoService': '../../common/seoService',
+        'ng-tags-input': '../../Extension/ng-tags-input/ng-tags-input',
+        'tokensTag': '../../Extension/Tagging-Tokenizer/tokens',
+        'selectize': 'selectize',
+        'tagIt': 'tag-it.min',
         // 'dialogs': '../../common/dialogs.min',
      
     },
@@ -53,21 +58,24 @@ require.config({
             deps: ['angular', 'angular-ui-router']
         },
         "authService": ['app'],
+        "seoService":['app'],
         "authData": ['app'],
         "authenticationService":['app','authData'],
         "apiService": { deps: ['app', 'notificationService', 'authenticationService'] },
         'notificationService': ['app'],
         'pagerDirective': ['app'],
         'dualmultiselect': ['angular'],
-        'dualmultiselect.min': ['angular']
+        'dualmultiselect.min': ['angular'],
+        'ng-tags-input': ['angular'],
+        'selectize': ['bootstraptreeview'],
         // 'dialogs': ['bootstrapUi','angular-ui-bootstrap','app']
        
     },
     //
     //deps: ['../../app']
 });
-require(['app', 'authService', 'authData', 'apiService', 'notificationService', 'authenticationService', 'pagerDirective', 'bootstrapUi'], function (app, authService, authData, apiService, notificationService, authenticationService, pagerDirective, bootstrapUi) {
-   // console.log('app.js, services.js and controllers.js files loaded');
+require(['app', 'authService', 'authData', 'apiService', 'notificationService', 'authenticationService', 'pagerDirective', 'bootstrapUi', 'seoService'], function (app, authService, authData, apiService, notificationService, authenticationService, pagerDirective, bootstrapUi, seoService) {
+    // console.log('app.js, services.js and controllers.js files loaded');
 //    app.init();
 });
 

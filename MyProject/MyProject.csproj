@@ -273,6 +273,7 @@
     <Compile Include="Model\AdminModel.cs" />
     <Compile Include="Model\AccountModel.cs" />
     <Compile Include="Model\ProductModel.cs" />
+    <Compile Include="Model\TagModel.cs" />
     <Compile Include="Model\TreeDataModel.cs" />
     <Compile Include="Model\SelectListModel.cs" />
     <Compile Include="Model\CategoryModel.cs" />
@@ -281,11 +282,20 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\common\seoService.js" />
     <Content Include="app\Content\css\bootstrap-theme.min.css" />
     <Content Include="app\Content\css\bootstrap-treeview.css" />
     <Content Include="app\Content\css\bootstrap.css" />
+    <Content Include="app\Content\css\jquery.tagit.css" />
+    <Content Include="app\Content\css\selectize.css" />
+    <Content Include="app\Content\css\tagit.ui-zendesk.css" />
+    <Content Include="app\Content\js\sifter.js" />
     <Content Include="app\Content\js\jquery-3.3.1.js" />
+    <Content Include="app\Content\js\microplugin.js" />
+    <Content Include="app\Content\js\ngTagsInput.js" />
     <Content Include="app\Content\js\npm.js" />
+    <Content Include="app\Content\js\selectize.js" />
+    <Content Include="app\Content\js\tag-it.min.js" />
     <Content Include="app\Extension\bootstraptreeview\bootstrap-treeview.css" />
     <Content Include="app\Extension\bootstraptreeview\bootstrap-treeview.js" />
     <Content Include="app\common\dialogs.min.js" />
@@ -1269,6 +1279,12 @@
     <Content Include="app\Extension\ckfinder\skins\v1\skin.js" />
     <Content Include="app\Extension\ckfinder\skins\v1\uipanel.css" />
     <Content Include="app\Extension\ckfinder\translations.txt" />
+    <Content Include="app\Extension\ng-tags-input\ng-tags-input.bootstrap.css" />
+    <Content Include="app\Extension\ng-tags-input\ng-tags-input.css" />
+    <Content Include="app\Extension\ng-tags-input\ng-tags-input.js" />
+    <Content Include="app\Extension\Tagging-Tokenizer\index.html" />
+    <Content Include="app\Extension\Tagging-Tokenizer\tokens.css" />
+    <Content Include="app\Extension\Tagging-Tokenizer\tokens.js" />
     <Content Include="app\Extension\ui-tree\angular-ui-tree.css" />
     <Content Include="app\Extension\ui-tree\angular-ui-tree.js" />
     <Content Include="app\Extension\ui-tree\angular-ui-tree.min.css" />

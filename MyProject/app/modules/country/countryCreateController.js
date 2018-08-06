@@ -23,8 +23,6 @@
                 apiService.post('api/country/create', $scope.country,
                     function (result) {
                         notificationService.displaySuccess(result.data.CountryName + ' đã được thêm mới.');
-
-                        debugger;
                         $rootScope.clearSearch();
                         $rootScope.modalClose();
                         //  $state.go('country_list');
@@ -35,9 +33,7 @@
         }
         $scope.setFiles =
 function setFiles(element) {
-    debugger;
     var files = event.target.files;
-    debugger;
 
     if (event.target.files[0] != undefined && event.target.files[0] != null) {
         var reader = new FileReader();

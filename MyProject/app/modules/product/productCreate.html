@@ -1,7 +1,7 @@
-﻿<div ng-controller="countryCreateController">
+﻿<div ng-controller="productCreateController">
     <section class="panel">
         <header class="panel-heading">
-            Thêm mới quốc gia
+            Thêm mới sản phẩm
             <div class="widget-icons pull-right">
 
                 <a href="javascrip:;" class="wclose" ng-click="Closemodal()"><i class="fa fa-times"></i></a>
@@ -9,67 +9,134 @@
         </header>
 
         <div class="panel-body">
-            <form class="form-horizontal " method="post" enctype="multipart/form-data" name="myForm" ng-submit="AddCountry()">
+            <form class="form-horizontal " method="post" enctype="multipart/form-data" name="myForm" ng-submit="Addproduct()">
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Tên nước</label>
+                    <label class="col-sm-3 control-label">Tên sản phẩm <span style="color:red">(*)</span></label>
                     <div class="col-sm-8">
-                        <input type="text" ng-model="country.CountryName" class="form-control" required>
+                        <input type="text" ng-model="product.ProductName" name="ProductName" class="form-control" ng-change="GetSeoTitle()" required>
+                        <span ng-show="!myForm.ProductName.$pristine && myForm.ProductName.$invalid" class="errorMessage">Bạn phải nhập tên sản phẩm</span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Mã nước</label>
-                    <div class="col-sm-5">
-                        <input type="text" ng-model="country.CountryCronyms" class="form-control" onblur="angular.element(this).scope().checkcodeExist(this)" required>
-                        <span class="errorMessage" ng-show="codeExist">Mã nước này đã tồn tại</span>
-                    </div>
+                    <label class="col-sm-3 control-label">Tiêu đề SEO <span style="color:red">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" ng-maxlength="256" name="alias" ng-model="product.Alias" required>
+                        <span ng-show="!myForm.alias.$pristine && myForm.alias.$invalid" class="errorMessage">Bạn phải nhập tiêu đề SEO</span>
+                        <span ng-show="myForm.alias.$error.maxlength" class="errorMessage">Tiêu đề SEO chỉ được 256 ký tự</span>
 
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Cờ</label>
-                    <div class="col-sm-6">
-
-                        <input type="file" fileread="country.CountryFlag" class="form-control" accept=".jpg,.jpeg,.png,.ico" required>
-
-                    </div>
-                </div>
-                <div class="form-group" ng-if="country.CountryFlag">
-                    <label class="col-sm-2 control-label">Ảnh</label>
-                    <div class="col-sm-6">
-
-                        <img ng-src="data:image/jpeg;base64,{{country.CountryFlag}}" width="128px" height="128px" />
-                      
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">File</label>
-                    <div class="col-sm-6">
-
-                        <input type="file" onchange="angular.element(this).scope().setFiles(this)" class="form-control" accept=".txt" required>
 
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Trạng thái</label>
-                    <div class="col-sm-10">
-                        <select class="form-control m-bot15" ng-model="country.CountryStatus">
-                            <option value="1" selected>Hoạt động</option>
-                            <option value="2">Tạm ngưng</option>
-
-
-                        </select>
+                    <label class="col-sm-3 control-label">Từ khóa <span style="color:red">(*)</span></label>
+                    <div class="col-sm-8">
+                        <input type="text" ng-model="product.Metakeyword" name="Metakeyword" class="form-control" required>
+                        <span ng-show="!myForm.Metakeyword.$pristine && myForm.Metakeyword.$invalid" class="errorMessage">Bạn phải nhập tiêu từ khóa</span>
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="col-sm-3 control-label">Loại sản phẩm <span style="color:red">(*)</span></label>
+                    <div class="col-sm-8">
 
-                    <div class="col-sm-3">
-                        <button title="Lưu" class="btn btn-primary btn-lg btn-block" type="submit">Lưu</button>
+                        <div id="treeview-checkable"></div>
+                        <input type="hidden" ng-model="product.CategoryID" name="CategoryID" required />
+                        <span ng-show="!myForm.Image.$pristine && myForm.CategoryID.$invalid" class="errorMessage">Hãy chọn một loại sản phẩm</span>
                     </div>
-                    <div class="col-sm-3">
-                        <button title="Thoát" class="btn btn-dark btn-lg btn-block" ng-click="Closemodal()" type="button">Thoát</button>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Mô tả</label>
+                    <div class="col-sm-8">
+
+                        <textarea ng-model="product.MetaDescription" data-ck-editor></textarea>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Hình ảnh <span style="color:red">(*)</span></label>
+                    <div class="col-sm-8">
 
-            </form>
+                        <button class="btn btn-default" type="button" ng-click="ChooseImage()">Chọn ảnh</button>
+
+                        <button class="btn btn-danger" ng-if="product.Image" type="button" ng-click="DeleteImage()">Xóa ảnh</button>
+
+                        <br>
+
+
+
+                        <ul class="list-inline">
+                            <li><img ng-src="{{product.Image}}" ng-if="product.Image" width="100" style="padding-top:10px" /></li>
+                        </ul>
+                        <input type="hidden" ng-model="product.Image" name="Image" required />
+                        <span ng-show="myForm.Image.$dirty && myForm.Image.$invalid" class="errorMessage">Hãy chọn ít nhất một ảnh đính kèm</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Ảnh phụ</label>
+                    <div class="col-sm-8">
+                        <button class="btn btn-default" type="button" ng-click="ChooseMoreImage()">Chọn ảnh</button>
+                        <button class="btn btn-danger" ng-if="moreImages.length > 0" type="button" ng-click="DeleteMoreImage()">Xóa ảnh</button>
+                        <ul class="list-inline">
+                            <li ng-repeat="img in moreImages"><img ng-src="{{img}}" width="100" style="padding-top:10px" /></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"></label>
+                    <div class="col-sm-8">
+                        <div class="col-md-6">
+                            <input type="checkbox" ng-model="product.HotFlag"> Hiện trang chủ
+                        </div>
+                        <div class="col-md-6">
+                            <input type="checkbox" ng-model="product.HomeFlag">Hàng nổi bật
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Thêm tags</label>
+                    <div class="col-sm-8">
+                        <div class="tags">
+
+                            <div ng-repeat="tag in Tags" class="tag label label-success">{{tag.text}} <a class="close" href ng-click="removeTag(tag)">x</a></div>
+                          
+                        </div> 
+                        <input type="text" ng-model="TextSearch" ng-keyup="complete(TextSearch)" class="form-control" />
+                        <ul class="list-group">
+                            <li class="list-group-item" ng-repeat="TagData in filterTag" ng-click="fillTextbox(TagData)">{{TagData.text}}</li>
+                        </ul>
+
+                     
+                    </div>
+                </div>
+         
+
+
+
+
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Trạng thái</label>
+                        <div class="col-sm-8">
+
+                            <select class="form-control m-bot15" ng-model="product.ProductStatus">
+                                <option value="1" selected>Hoạt động</option>
+                                <option value="2">Tạm ngưng</option>
+
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+
+                        <div class="col-sm-3">
+                            <button title="Lưu" class="btn btn-primary btn-lg btn-block" ng-disabled="myForm.$invalid" type="submit">Lưu</button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button title="Thoát" class="btn btn-dark btn-lg btn-block" ng-click="Closemodal()" type="button">Thoát</button>
+                        </div>
+                    </div>
+
+</form>
         </div>
     </section>
 

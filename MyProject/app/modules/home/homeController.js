@@ -8,7 +8,6 @@
                 stateService.go('login');
             }
             else {
-                debugger;
                 $scope.UserName = localStorage.getItem("userName");
                 $scope.LogOut = function () {
                     localStorage.clear();

@@ -1,10 +1,7 @@
 ﻿(function (app) {
     'use strict';
-    debugger;
     app.controller('categoryListController', ['$scope', 'apiService', 'notificationService', '$filter', '$modal','$rootScope','$http',
     function userListController($scope, apiService, notificationService, $filter,$modal,$rootScope,$http) {
-
-        debugger;
         $scope.loading = true;
         $scope.data = [];
         $scope.page = 0;
@@ -31,7 +28,6 @@
                     }
                 },
                 callback: function (result) {
-                    debugger;
                     if (result) {
                         var listId = [];
                         $.each($scope.selected, function (i, item) {
@@ -51,8 +47,6 @@
                     }
                 }
             });
-            debugger;
-   
         }
 
         $scope.isAll = false;
@@ -112,7 +106,6 @@
                     }
                 },
                 callback: function (result) {
-                    debugger;
                     if (result) {
                         var config = {
                             params: {
@@ -133,7 +126,6 @@
         }
         function search(page) {
             page = page || 0;
-            debugger;
             $scope.loading = true;
             var config = {
                 params: {
@@ -196,7 +188,6 @@
         };
         function editcategory(id) {
             var modalHtml = 'modules/category/categoryEdit.html';
-            debugger;
             require(
            [
             '/app/modules/category/categoryEditController.js', 'ngckEditor', 'bootstraptreeview'

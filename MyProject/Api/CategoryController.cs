@@ -18,7 +18,7 @@ using System.Web.Script.Serialization;
 namespace MyProject.Api
 {
     [RoutePrefix("api/Category")]
-    [AllowAnonymous]
+    [Authorize]
     public class CategoryController : BaseController
     {
         private ICategoryService _Category;

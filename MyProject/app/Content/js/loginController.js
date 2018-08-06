@@ -2,7 +2,6 @@
     
     app.controller('loginController', ['$scope', '$injector', '$location', 'authService',
         function ($scope, $injector, $localtion, authService) {
-            debugger;
             $scope.loginData = {
                 userName: "",
                 password: "",
@@ -19,7 +18,6 @@ function success(response) {
     stateService.go('home');
 },
     function err(response) {
-        debugger;
         // response.data - find error message here
         // response.status - find error code here 
         // treat error here

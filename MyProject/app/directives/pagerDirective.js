@@ -1,4 +1,4 @@
-define(['app'], function (app) {
+﻿define(['app'], function (app) {
 
 
     'use strict';
@@ -56,9 +56,7 @@ define(['app'], function (app) {
             },
             restrict: 'A',
             link: function (scope, element, attributes) {
-                debugger;
                 element.bind("change", function (changeEvent) {
-                    debugger;
               
                     if (changeEvent.target.files[0] != undefined && changeEvent.target.files[0] != null) {
                         var reader = new FileReader();
@@ -106,7 +104,6 @@ define(['app'], function (app) {
                 filerName: "="
             },
             link: function (scope, element, attributes) {
-                debugger;
                 element.bind("change", function (changeEvent) {
                     if (changeEvent.target.files[0] != undefined && changeEvent.target.files[0] != null) {
                         scope.$apply(function () {

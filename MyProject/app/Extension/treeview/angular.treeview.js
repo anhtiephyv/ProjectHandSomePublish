@@ -31,7 +31,6 @@
             link: function (scope, element, attrs) {
                 //tree id
                 var treeId = attrs.treeId;
-                debugger;
                 //tree model
                 var treeModel = attrs.treeModel;
 
@@ -43,7 +42,6 @@
 
                 //children
                 var nodeChildren = attrs.nodeChildren || 'children';
-                debugger;
                 var nodefunction = attrs.nodefunction || 'nodefunction';
                 //tree template
                 var template =
@@ -69,9 +67,7 @@
 
                         //if node head clicks,
                         scope[treeId].selectNodeHead = scope[treeId].selectNodeHead || function (selectedNode, nodefunction) {
-                            debugger;
                             scope.GetCategoryTreeDataByParent(selectedNode.id).then(function (rest) {
-                                debugger;
                                 selectedNode.children = rest
                             });
                         
