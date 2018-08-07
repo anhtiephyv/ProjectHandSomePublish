@@ -91,41 +91,9 @@
     <Compile Include="Base\IUnitOfWork.cs" />
     <Compile Include="Base\UnitOfWork .cs" />
     <Compile Include="DBContext\MyShopDBContext.cs" />
-    <Compile Include="Migrations\201807291226064_InitialCreate.cs" />
-    <Compile Include="Migrations\201807291226064_InitialCreate.Designer.cs">
-      <DependentUpon>201807291226064_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807292340342_doi_ten_parent.cs" />
-    <Compile Include="Migrations\201807292340342_doi_ten_parent.Designer.cs">
-      <DependentUpon>201807292340342_doi_ten_parent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807301438357_them_bang_size.cs" />
-    <Compile Include="Migrations\201807301438357_them_bang_size.Designer.cs">
-      <DependentUpon>201807301438357_them_bang_size.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807311523429_add_productItems.cs" />
-    <Compile Include="Migrations\201807311523429_add_productItems.Designer.cs">
-      <DependentUpon>201807311523429_add_productItems.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201807311554351_add_tag.cs" />
-    <Compile Include="Migrations\201807311554351_add_tag.Designer.cs">
-      <DependentUpon>201807311554351_add_tag.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808011405219_sua_bang_product.cs" />
-    <Compile Include="Migrations\201808011405219_sua_bang_product.Designer.cs">
-      <DependentUpon>201808011405219_sua_bang_product.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808021522334_bo_nullable_viewcount.cs" />
-    <Compile Include="Migrations\201808021522334_bo_nullable_viewcount.Designer.cs">
-      <DependentUpon>201808021522334_bo_nullable_viewcount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808051457421_fix_tag.cs" />
-    <Compile Include="Migrations\201808051457421_fix_tag.Designer.cs">
-      <DependentUpon>201808051457421_fix_tag.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808051506010_add_product_tag.cs" />
-    <Compile Include="Migrations\201808051506010_add_product_tag.Designer.cs">
-      <DependentUpon>201808051506010_add_product_tag.cs</DependentUpon>
+    <Compile Include="Migrations\201808071457186_InitialCreate.cs" />
+    <Compile Include="Migrations\201808071457186_InitialCreate.Designer.cs">
+      <DependentUpon>201808071457186_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationRole.cs" />
@@ -145,6 +113,7 @@
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\CountryRepository.cs" />
+    <Compile Include="Repository\ProductTag.cs" />
     <Compile Include="Repository\UserCountryRepository.cs" />
     <Compile Include="Repository\UsersRepository.cs" />
     <Compile Include="Repository\AdminRepository.cs" />
@@ -158,35 +127,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807291226064_InitialCreate.resx">
-      <DependentUpon>201807291226064_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807292340342_doi_ten_parent.resx">
-      <DependentUpon>201807292340342_doi_ten_parent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807301438357_them_bang_size.resx">
-      <DependentUpon>201807301438357_them_bang_size.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807311523429_add_productItems.resx">
-      <DependentUpon>201807311523429_add_productItems.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807311554351_add_tag.resx">
-      <DependentUpon>201807311554351_add_tag.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808011405219_sua_bang_product.resx">
-      <DependentUpon>201808011405219_sua_bang_product.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808021522334_bo_nullable_viewcount.resx">
-      <DependentUpon>201808021522334_bo_nullable_viewcount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808051457421_fix_tag.resx">
-      <DependentUpon>201808051457421_fix_tag.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808051506010_add_product_tag.resx">
-      <DependentUpon>201808051506010_add_product_tag.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808071457186_InitialCreate.resx">
+      <DependentUpon>201808071457186_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

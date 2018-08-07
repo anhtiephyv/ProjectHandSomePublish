@@ -15,7 +15,7 @@ namespace Data.Models
         [MaxLength(100)]
         public string ProductName { get; set; }
 
-        public int CategoryID { get; set; }
+        public int? CategoryID { get; set; }
 
         public string MetaDescription { get; set; }
         public bool? HomeFlag { set; get; }
@@ -29,7 +29,6 @@ namespace Data.Models
 
         [Column(TypeName = "xml")]
         public string MoreImages { set; get; }
-        [ForeignKey("CategoryID")]
         public virtual Category ProductCategory { set; get; }
     }
 }

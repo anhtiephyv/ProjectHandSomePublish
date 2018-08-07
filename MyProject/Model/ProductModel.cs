@@ -12,7 +12,7 @@ namespace MyProject.Model
         public int ProductID { get; set; }
         public string ProductName { get; set; }
 
-        public int CategoryID { get; set; }
+        public int? CategoryID { get; set; }
         public string CategoryName { get; set; }
         //     public int? BrandID { get; set; }
 

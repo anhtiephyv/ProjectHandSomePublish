@@ -12,7 +12,7 @@ namespace Data.Repository
     {
         void DeleteProductTag(List<ProductTag> _listProductTag);
         void CreateProductTag(List<ProductTag> _listProductTag);
-        List<ProductTag> GetProductTagByProductID(int productID);
+        List<Tag> GetProductTagByProductID(int productID);
     }
     public class ProductTagRepository : GenericRepository<ProductTag>, IProductTagRepository
     {
@@ -25,9 +25,9 @@ namespace Data.Repository
         {
             DbContext.ProductTag.AddRange(_listProductTag);
         }
-        public List<ProductTag> GetProductTagByProductID(int productID)
+        public List<Tag> GetProductTagByProductID(int productID)
         {
-            return DbContext.ProductTag.Where(x => x.ProductID == productID).ToList();
+            return DbContext.ProductTag.Where(x => x.ProductID == productID).Select(x => x.Tag).ToList();
         }
         public void DeleteProductTag(List<ProductTag> _listProductTag)
         {

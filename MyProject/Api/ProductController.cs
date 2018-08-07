@@ -70,13 +70,32 @@ namespace MyProject.Api
                 }
                 else
                 {
+                      // Create tag mới
                     var TagsCreate = ProductVm.Tags.Where(x => x.isNew == true).ToList();
                     var ListTags = Mapper.Map<List<TagModel>, List<Tag>>(TagsCreate);
                     var ListTagCreate = _Tag.AddTags(ListTags);
-
-                    var modelVm = Mapper.Map<ProductModel, Product>(ProductVm);
+                  /// Tạo product
+                     var modelVm = Mapper.Map<ProductModel, Product>(ProductVm);
                     _Product.Create(modelVm);
                     _Product.Save();
+                    /// Tag tag
+                    List<ProductTag> ListProductTag = new List<ProductTag>();
+                    foreach(var Tag in ProductVm.Tags.Where(x => x.isNew == false).ToList())
+                    {
+                        ProductTag ProductTag = new ProductTag();
+                        ProductTag.ProductID = modelVm.ProductID;
+                        ProductTag.TagID = Convert.ToInt32(Tag.id);
+                        ListProductTag.Add(ProductTag);
+                    }
+                    foreach (var Tag in ListTagCreate)
+                    {
+                        ProductTag ProductTag = new ProductTag();
+                        ProductTag.ProductID = modelVm.ProductID;
+                        ProductTag.TagID = Tag.TagID;
+                        ListProductTag.Add(ProductTag);
+                    }
+                    _ProductTagReporistory.CreateProductTag(ListProductTag);
+                    _ProductTagReporistory.Save();
 
                     var responseData = Mapper.Map<Product, ProductModel>(modelVm);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
@@ -109,44 +128,71 @@ namespace MyProject.Api
         //        return response;
         //    });
         //}
-        //[Route("detail/{id}")]
-        //[HttpGet]
-        ////[Authorize(Roles = "ViewUser")]
-        //public HttpResponseMessage Details(HttpRequestMessage request, int id)
-        //{
-        //    HttpResponseMessage response = null;
-        //    var ProductVm = _Product.GetByID(id);
-        //    var responseData = Mapper.Map<Product, ProductModel>(ProductVm);
-        //    response = request.CreateResponse(HttpStatusCode.OK, responseData);
-        //    return response;
+        [Route("detail/{id}")]
+        [HttpGet]
+        //[Authorize(Roles = "ViewUser")]
+        public HttpResponseMessage Details(HttpRequestMessage request, int id)
+        {
+            HttpResponseMessage response = null;
+            var ProductVm = _Product.GetByID(id);
+            var responseData = Mapper.Map<Product, ProductModel>(ProductVm);
+            response = request.CreateResponse(HttpStatusCode.OK, responseData);
+            return response;
 
 
-        //}
+        }
 
-        //[Route("update")]
-        //[HttpPost]
-        //public HttpResponseMessage Update(HttpRequestMessage request, ProductModel ProductVm)
-        //{
-        //    return CreateHttpResponse(request, () =>
-        //    {
-        //        HttpResponseMessage response = null;
-        //        if (!ModelState.IsValid)
-        //        {
-        //            response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
-        //        }
-        //        else
-        //        {
-        //            var modelVm = Mapper.Map<ProductModel, Product>(ProductVm);
-        //            _Product.Update(modelVm);
-        //            _Product.Save();
+        [Route("update")]
+        [HttpPost]
+        public HttpResponseMessage Update(HttpRequestMessage request, ProductModel ProductVm)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    // Create tag mới
+                    var TagsCreate = ProductVm.Tags.Where(x => x.isNew == true).ToList();
+                    var ListTags = Mapper.Map<List<TagModel>, List<Tag>>(TagsCreate);
+                    var ListTagCreate = _Tag.AddTags(ListTags);
+                    /// Update product
+                    var modelVm = Mapper.Map<ProductModel, Product>(ProductVm);
+                    _Product.Update(modelVm);
+                    _Product.Save();
+                    // select các tag cũ
+                    var AllOldTag = _ProductTagReporistory.GetProductTagByProductID(modelVm.ProductID);
+               //     var AllDeletedTag = AllOldTag.Intersect(ProductVm.Tags.Where());
+                    /// Tag tag
+                    List<ProductTag> ListProductTag = new List<ProductTag>();
+                    foreach (var Tag in ProductVm.Tags.Where(x => x.isNew == false).ToList())
+                    {
+                        ProductTag ProductTag = new ProductTag();
+                        ProductTag.ProductID = modelVm.ProductID;
+                        ProductTag.TagID = Convert.ToInt32(Tag.id);
+                        ListProductTag.Add(ProductTag);
+                    }
+                    foreach (var Tag in ListTagCreate)
+                    {
+                        ProductTag ProductTag = new ProductTag();
+                        ProductTag.ProductID = modelVm.ProductID;
+                        ProductTag.TagID = Tag.TagID;
+                        ListProductTag.Add(ProductTag);
+                    }
+                    _ProductTagReporistory.CreateProductTag(ListProductTag);
+                    _ProductTagReporistory.Save();
 
-        //            var responseData = Mapper.Map<Product, ProductModel>(modelVm);
-        //            response = request.CreateResponse(HttpStatusCode.Created, responseData);
-        //        }
+                    var responseData = Mapper.Map<Product, ProductModel>(modelVm);
+                    response = request.CreateResponse(HttpStatusCode.Created, responseData);
 
-        //        return response;
-        //    });
-        //}
+                }
+
+                return response;
+            });
+        }
         [HttpDelete]
         [Route("delete")]
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
@@ -220,6 +266,27 @@ namespace MyProject.Api
                 else
                 {
                     var AllTag = _Tag.Get().ToList();
+                    var responseData = Mapper.Map<List<Tag>, List<TagModel>>(AllTag);
+                    response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                }
+
+                return response;
+            });
+        }
+        [Route("getlisttagbyproductid/{id}")]
+        [HttpGet]
+        public HttpResponseMessage getlisttagbyProductId(HttpRequestMessage request,int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (!ModelState.IsValid)
+                {
+                    response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                }
+                else
+                {
+                    var AllTag = _ProductTagReporistory.GetProductTagByProductID(id);
                     var responseData = Mapper.Map<List<Tag>, List<TagModel>>(AllTag);
                     response = request.CreateResponse(HttpStatusCode.OK, responseData);
                 }

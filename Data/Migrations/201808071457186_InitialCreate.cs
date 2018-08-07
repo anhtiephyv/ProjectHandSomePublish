@@ -13,14 +13,14 @@ namespace Data.Migrations
                     {
                         CategoryID = c.Int(nullable: false, identity: true),
                         CategoryName = c.String(maxLength: 100),
-                        ParentCategory = c.Int(),
+                        ParentCategoryID = c.Int(),
                         CategoryLevel = c.Int(nullable: false),
                         DisplayOrder = c.Int(),
                         Description = c.String(),
                     })
                 .PrimaryKey(t => t.CategoryID)
-                .ForeignKey("dbo.Category", t => t.ParentCategory)
-                .Index(t => t.ParentCategory);
+                .ForeignKey("dbo.Category", t => t.ParentCategoryID)
+                .Index(t => t.ParentCategoryID);
             
             CreateTable(
                 "dbo.Product",
@@ -28,27 +28,20 @@ namespace Data.Migrations
                     {
                         ProductID = c.Int(nullable: false, identity: true),
                         ProductName = c.String(maxLength: 100),
-                        CategoryID = c.Int(nullable: false),
-                        ProductQuantity = c.Int(nullable: false),
-                        ProductColor = c.String(),
-                        ProductDescription = c.String(),
-                        ProductPrice = c.Single(nullable: false),
+                        CategoryID = c.Int(),
+                        MetaDescription = c.String(),
+                        HomeFlag = c.Boolean(),
+                        Alias = c.String(),
+                        HotFlag = c.Boolean(),
+                        ViewCount = c.Int(nullable: false),
+                        ProductStatus = c.Int(),
+                        MetaKeyword = c.String(),
+                        Image = c.String(maxLength: 256),
+                        MoreImages = c.String(storeType: "xml"),
                     })
                 .PrimaryKey(t => t.ProductID)
-                .ForeignKey("dbo.Category", t => t.CategoryID, cascadeDelete: true)
+                .ForeignKey("dbo.Category", t => t.CategoryID)
                 .Index(t => t.CategoryID);
-            
-            CreateTable(
-                "dbo.Sale",
-                c => new
-                    {
-                        SaleID = c.Int(nullable: false, identity: true),
-                        ProductID = c.Int(nullable: false),
-                        SalePercent = c.Single(nullable: false),
-                    })
-                .PrimaryKey(t => t.SaleID)
-                .ForeignKey("dbo.Product", t => t.ProductID, cascadeDelete: true)
-                .Index(t => t.ProductID);
             
             CreateTable(
                 "dbo.Country",
@@ -66,6 +59,30 @@ namespace Data.Migrations
                         LastUpdate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.CountryID);
+            
+            CreateTable(
+                "dbo.ProductTag",
+                c => new
+                    {
+                        ProductTagID = c.Int(nullable: false, identity: true),
+                        ProductID = c.Int(nullable: false),
+                        TagID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.ProductTagID)
+                .ForeignKey("dbo.Product", t => t.ProductID, cascadeDelete: true)
+                .ForeignKey("dbo.Tag", t => t.TagID, cascadeDelete: true)
+                .Index(t => t.ProductID)
+                .Index(t => t.TagID);
+            
+            CreateTable(
+                "dbo.Tag",
+                c => new
+                    {
+                        TagID = c.Int(nullable: false, identity: true),
+                        TagName = c.String(),
+                        TagType = c.String(),
+                    })
+                .PrimaryKey(t => t.TagID);
             
             CreateTable(
                 "dbo.ApplicationRoles",
@@ -92,6 +109,16 @@ namespace Data.Migrations
                 .ForeignKey("dbo.ApplicationUsers", t => t.ApplicationUser_Id)
                 .Index(t => t.IdentityRole_Id)
                 .Index(t => t.ApplicationUser_Id);
+            
+            CreateTable(
+                "dbo.Size",
+                c => new
+                    {
+                        SizeID = c.Int(nullable: false, identity: true),
+                        SizeName = c.String(),
+                        SizeValue = c.String(),
+                    })
+                .PrimaryKey(t => t.SizeID);
             
             CreateTable(
                 "dbo.UserCountry",
@@ -182,27 +209,31 @@ namespace Data.Migrations
             DropForeignKey("dbo.UserCountry", "UserID", "dbo.Users");
             DropForeignKey("dbo.UserCountry", "CountryID", "dbo.Country");
             DropForeignKey("dbo.ApplicationUserRoles", "IdentityRole_Id", "dbo.ApplicationRoles");
-            DropForeignKey("dbo.Sale", "ProductID", "dbo.Product");
+            DropForeignKey("dbo.ProductTag", "TagID", "dbo.Tag");
+            DropForeignKey("dbo.ProductTag", "ProductID", "dbo.Product");
             DropForeignKey("dbo.Product", "CategoryID", "dbo.Category");
-            DropForeignKey("dbo.Category", "ParentCategory", "dbo.Category");
+            DropForeignKey("dbo.Category", "ParentCategoryID", "dbo.Category");
             DropIndex("dbo.ApplicationUserLogins", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.ApplicationUserClaims", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.UserCountry", new[] { "CountryID" });
             DropIndex("dbo.UserCountry", new[] { "UserID" });
             DropIndex("dbo.ApplicationUserRoles", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.ApplicationUserRoles", new[] { "IdentityRole_Id" });
-            DropIndex("dbo.Sale", new[] { "ProductID" });
+            DropIndex("dbo.ProductTag", new[] { "TagID" });
+            DropIndex("dbo.ProductTag", new[] { "ProductID" });
             DropIndex("dbo.Product", new[] { "CategoryID" });
-            DropIndex("dbo.Category", new[] { "ParentCategory" });
+            DropIndex("dbo.Category", new[] { "ParentCategoryID" });
             DropTable("dbo.ApplicationUserLogins");
             DropTable("dbo.ApplicationUserClaims");
             DropTable("dbo.ApplicationUsers");
             DropTable("dbo.Users");
             DropTable("dbo.UserCountry");
+            DropTable("dbo.Size");
             DropTable("dbo.ApplicationUserRoles");
             DropTable("dbo.ApplicationRoles");
+            DropTable("dbo.Tag");
+            DropTable("dbo.ProductTag");
             DropTable("dbo.Country");
-            DropTable("dbo.Sale");
             DropTable("dbo.Product");
             DropTable("dbo.Category");
         }

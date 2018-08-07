@@ -168,9 +168,9 @@
          
             require(
            [
-            '/app/modules/product/productCreateController.js', 'ngckEditor', 'bootstraptreeview', 'tagIt'
+            '/app/modules/product/productCreateController.js', 'ngckEditor', 'bootstraptreeview'
            ],
-           function (productCreateController, ngckEditor, bootstraptreeview, tagIt) {
+           function (productCreateController, ngckEditor, bootstraptreeview) {
                $scope.myModalInstance = $modal.open({
                    templateUrl: modalHtml, // loads the template
                   
@@ -189,13 +189,13 @@
             var modalHtml = 'modules/product/productEdit.html';
             require(
            [
-            '/app/modules/product/productEditController.js'
+            '/app/modules/product/productEditController.js', 'ngckEditor', 'bootstraptreeview'
            ],
-           function (productEditController) {
+           function (productEditController, ngckEditor, bootstraptreeview) {
                $scope.myModalInstance = $modal.open({
                    templateUrl: modalHtml,
                    controller: productEditController,
-                   windowClass: 'app-modal-window',
+                   windowClass: 'app-modal-window-large',
                    backdrop: true,
                });
            });

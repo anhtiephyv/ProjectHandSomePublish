@@ -24,7 +24,7 @@ namespace Data.DBContext
         public DbSet<Size> Size { get; set; }
         public DbSet<Tag> Tag { get; set; }
         public DbSet<ProductTag> ProductTag { get; set; }
-     //   public DbSet<Color> Color { get; set; }
+        //   public DbSet<Color> Color { get; set; }
 
         //  public DbSet<ApplicationUser> ApplicationIdentity  { get; set;}
         public static MyShopDBContext Create()
@@ -40,10 +40,14 @@ namespace Data.DBContext
             builder.Entity<IdentityUserClaim>().HasKey(i => i.UserId).ToTable("ApplicationUserClaims");
             builder.Entity<Category>()
                            .HasMany(e => e.CategoryChildren)
-                .WithOptional(e => e.CategoryParent)
-                .HasForeignKey(e => e.ParentCategoryID);
+                           .WithOptional(e => e.CategoryParent)
+                           .HasForeignKey(e => e.ParentCategoryID);
+            builder.Entity<Product>()
+                            .HasOptional(e => e.ProductCategory)
+                            .WithMany(e => e.Products)
+                            .HasForeignKey(e => e.CategoryID);
 
         }
     }
-  
+
 }
